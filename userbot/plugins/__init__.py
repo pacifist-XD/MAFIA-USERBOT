@@ -7,7 +7,8 @@ import heroku3
 import requests
 import spamwatch as spam_watch
 from validators.url import url
-
+import CMD_HELP
+from userbot.plugins
 from .. import *
 from ..Config import Config
 
@@ -131,7 +132,7 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-async def catalive():
+async def mafiaalive():
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
     uptime = await get_readable_time((time.time() - StartTime))
