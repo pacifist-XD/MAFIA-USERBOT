@@ -1,7 +1,7 @@
 {
-  "name": "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋†",
-  "description": "MAFIA USERBOT MADE BY @H1M4N5HU0P . FOR FUTURE UPDATES JOIN @MAFIA_USERBOT .",
-  "logo": "https://telegra.ph/file/b61486075c6ef73dd0d12.png ",
+  "name": "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋",
+  "description": "The Mafia Userbot made by @H1M4N5HU0P special thanks to respective HellBot owner @Kraken_The_BadASS. Join for updates related info @MAFIA_USERBOT",
+  "logo": " https://telegra.ph/file/b61486075c6ef73dd0d12.jpg ",
     "keywords": [
     "telegram",
     "userbot",
@@ -9,14 +9,13 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/H1M4N5HU0P/MAFIA-USERBOT",
-  "website": "https://github.com/H1M4N5HU0P/MAFIA-USERBOT",
+  "repository": "https://github.com/H1M4N5HU0P/MAFIA-USERBOT/",
+  "website": "https://github.com/H1M4N5HU0P/MAFIA-USERBOT/",
   "success_url": "https://t.me/MAFIA_USERBOT",
   "env": {
     "ENV": {
       "description": "Set this to ANYTHING will enable heroku.",
       "value": "ANYTHING"
-      "required": false
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
       "description": "Where downloaded files will go.",
@@ -26,32 +25,32 @@
     "F_BAN_LOGGER_GROUP": {
       "description": "Put Group id Same As PRIVATE_GROUP_ID.",
       "value": "",
-      "required": true
+      "required": false
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name or Username like @H1M4N5HU0P.",
-      "value": "@MAFIA_USERBOT",
+      "value": "",
       "required": false
     },
     "ALIVE_MSG": {
       "description": "Set Custom awake Message When entering .mafia command.",
-      "value": "HEY THERE! I AM ALIVE.😉",
-      "required": true
+      "value": "",
+      "required": false
     },
     "ALIVE_PHOTTO": {
       "description": "put here any telegraph media link for alive pic.",
-      "value": "https://telegra.ph/file/b61486075c6ef73dd0d12.png",
+      "value": "",
       "required": false
     },
     "BIO_MSG": {
       "description": "Put Your Telegram Bio Here Required For Auto Bio.",
-      "value": "MAFIA USERBOT OP ( @MAFIA_USERBOT) ",
+      "value": "",
       "required": false
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
-      "value": "https://telegra.ph/file/b61486075c6ef73dd0d12.png",
-      "required": false
+      "value": "",
+      "required": true
     },
     "CUSTOM_PMPERMIT": {
       "description": "Your custom pm permit msg.",
@@ -103,7 +102,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://Hellbot.hellboyop.repl.run/ ",
+      "description": "Get this value by running https://repl.it/@H1M4N5HU0P/SpotlessShyProgram#main.py ",
       "value": ""
     },
     "GITHUB_ACCESS_TOKEN": {
@@ -112,7 +111,7 @@
       "required": false
     },
     "GIT_REPO_NAME": {
-      "description": "Your repo name Example: HellBoy-OP/HellBot , but GITHUB_ACCESS_TOKEN must be setup first.",
+      "description": "Your repo name Example: H1M4N5HU0P/MAFIA-USERBOT , but GITHUB_ACCESS_TOKEN must be setup first.",
       "value": "",
       "required": false
     },
@@ -155,17 +154,15 @@
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": " Set The Amount Of Buttons Displayed In Help Command",
-      "value": "8",
       "required": true
     },
     "NO_OF_COLUMS_DISPLAYED_IN_H_ME_CMD": {
-      "description": "Set The Amount Of Rows You Want To Displayed In Help Command default 3",
-      "value": "3",
+      "description": "Set The Amount Of Rows You Want To Displayed In Help Command default 2",
       "required": true
     },
     "EMOJI_TO_DISPLAY_IN_HELP": {
       "description": "Set The emojies You Want to Add In Help Command!!",
-      "value": "🤖",
+      "value": "",
       "required": true
     }, 
     "TZ": {
