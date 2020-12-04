@@ -13,7 +13,7 @@ from userbot import CMD_HELP
 from collections import deque
 import importlib.util
 import random
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "????? ???????"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 
 @borg.on(admin_cmd(pattern="stupid$"))
 async def _(event):
@@ -22,7 +22,8 @@ async def _(event):
     animation_interval = 1
     animation_ttl = range(0, 14)
     await event.edit("brain")
-    animation_chars = ["YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
+    animation_chars = [          
+              "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
               "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",
               "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n🧠     <(^_^ <)    🗑",
               "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n🧠   <(^_^ <)      🗑",
@@ -35,7 +36,8 @@ async def _(event):
               "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n        (> ^_^)>🧠 🗑",
               "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n          (> ^_^)>🧠🗑",
               "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n           (> ^_^)>🗑",
-              "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n           <(^_^ <)🗑"]
+              "YOᑌᖇ ᗷᖇᗩI�? ➡️ 🧠\n\n           <(^_^ <)🗑",
+          ]
     for i in animation_ttl:
         	
             await asyncio.sleep(animation_interval)
@@ -56,7 +58,7 @@ async def _(event):
             "⬜⬜⬛⬜⬜\n⬜⬜⬛⬜⬜\n⬜⬜🔴⬜⬜",
             "⬜⬜⬛⬜⬜\n⬜⬛⬜⬜⬜\n🔴⬜⬜⬜⬜",
             "🔴⬛⬛⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜�?",
-	    "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜\n�?  [Hêllẞø�? ¡§ Ø¶](https://github.com/HellBoy-OP/HellBot) ⬜\n⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜�?"
+	    "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜\n�?  [Hêllẞø�? ¡§ Ø¶](https://github.com/H1M4N5HU0P/MAFIA-USERBOT) ⬜\n⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜�?"
             
  ]
     if event.fwd_from:
@@ -203,12 +205,12 @@ async def _(event):
             "😧",
             "😡",
             "😢",
-            "�?**HellBot Bolte Public**",
+            "�?**Mafia Userbot Bolte Public**",
             "😁",
             "😧",
             "😡",
             "😢",
-            "[PAPA HERE](https://t.me/hellbot_official)",
+            "[PAPA HERE](https://t.me/MAFIA_USERBOT)",
             "__**Good to See you Guys....**__"
         ]
     for i in animation_ttl:
