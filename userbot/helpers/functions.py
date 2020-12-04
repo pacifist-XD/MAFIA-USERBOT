@@ -17,6 +17,21 @@ from bs4 import BeautifulSoup
 from asyncio import sleep
 from emoji import get_emoji_regexp
 
+import shlex
+from os import getcwd
+from os.path import basename, join
+from textwrap import wrap
+from typing import Optional, Tuple
+
+import numpy as np
+
+try:
+    from colour import Color as asciiColor
+except:
+    os.system("pip install colour")
+from PIL import Image, ImageDraw, ImageFont
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+
 
 async def simpmusic(simp , QUALITY):
   search = simp
@@ -52,6 +67,21 @@ async def simpmusicvideo(simp):
     video_link =  'http://www.youtube.com/'+video_link
     command = ('youtube-dl -f "[filesize<20M]" ' +video_link)  
     os.system(command)
+
+
+async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
+    args = shlex.split(cmd)
+    process = await asyncio.create_subprocess_exec(
+        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+    )
+    stdout, stderr = await process.communicate()
+    return (
+        stdout.decode("utf-8", "replace").strip(),
+        stderr.decode("utf-8", "replace").strip(),
+        process.returncode,
+        process.pid,
+    )
+
 
 #convertion..
 
