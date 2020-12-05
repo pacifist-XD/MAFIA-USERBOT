@@ -116,7 +116,7 @@ async def download(target_file):
             estimated_total_time = downloader.get_eta(human=True)
             try:
                 current_message = f"{status}..\
-                \nFOR : 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋\
+                \nFOR : F.R.I.D.A.Y™ AND INDIANBOT™\
                 \nURL: {url}\
                 \nFile Name: {file_name}\
                 \n{progress_str}\
