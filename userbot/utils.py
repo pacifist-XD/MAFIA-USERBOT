@@ -1,3 +1,5 @@
+# credits to @mrconfused 
+
 import asyncio
 import datetime
 import importlib
@@ -59,7 +61,6 @@ def load_module(shortname):
         mod.Config = Config
         mod.borg = bot
         mod.edit_or_reply = edit_or_reply
-        mod.edit_delete = edit_delete
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
@@ -242,27 +243,6 @@ def on(**args):
 
     return decorater
 
-
-async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None):
-    parse_mode = parse_mode or "md"
-    link_preview = link_preview or False
-    time = time or 5
-    if event.sender_id in Config.SUDO_USERS:
-        reply_to = await event.get_reply_message()
-        catevent = (
-            await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
-            if reply_to
-            else await event.reply(
-                text, link_preview=link_preview, parse_mode=parse_mode
-            )
-        )
-    else:
-        catevent = await event.edit(
-            text, link_preview=link_preview, parse_mode=parse_mode
-        )
-    await asyncio.sleep(time)
-    return await catevent.delete()
-
  
 def errors_handler(func):
     async def wrapper(errors):
@@ -278,7 +258,7 @@ def errors_handler(func):
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
-            link = "[here](https://t.me/sn12384)"
+            link = "[here](https://t.me/H1M4N5HU0P)"
             text += "If you wanna you can report it"
             text += f"- just forward this message {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
