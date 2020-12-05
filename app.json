@@ -29,27 +29,27 @@
     },
     "ALIVE_NAME": {
       "description": "Fill your Full name or Username like @H1M4N5HU0P.",
-      "value": "",
+      "value": "@MAFIA_USERBOT",
       "required": false
     },
     "ALIVE_MSG": {
       "description": "Set Custom awake Message When entering .mafia command.",
-      "value": "",
+      "value": "😈MAFIA USERBOT OP😈",
       "required": false
     },
     "ALIVE_PHOTTO": {
       "description": "put here any telegraph media link for alive pic.",
-      "value": "",
+      "value": "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg",
       "required": false
     },
     "BIO_MSG": {
       "description": "Put Your Telegram Bio Here Required For Auto Bio.",
-      "value": "",
+      "value": "😈LEGEND'S SAY MAFIA USERBOT😈",
       "required": false
     },
     "PMPERMIT_PIC": {
       "description": "put here any telegraph media link for pmpermit custom pic.",
-      "value": "",
+      "value": "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg",
       "required": true
     },
     "CUSTOM_PMPERMIT": {
@@ -154,15 +154,17 @@
     },
     "NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD": {
       "description": " Set The Amount Of Buttons Displayed In Help Command",
+      "value": "8",
       "required": true
     },
     "NO_OF_COLUMS_DISPLAYED_IN_H_ME_CMD": {
       "description": "Set The Amount Of Rows You Want To Displayed In Help Command default 2",
+      "value": "3",
       "required": true
     },
     "EMOJI_TO_DISPLAY_IN_HELP": {
       "description": "Set The emojies You Want to Add In Help Command!!",
-      "value": "",
+      "value": "🤖",
       "required": true
     }, 
     "TZ": {
