@@ -1,36 +1,52 @@
-"""Fun pligon...for DC
-\nCode by DC , ©[H1M4N5HU0P](https://t.me/H1M4N5HU0P)
-type `.degi` and `.nehi` to see the fun.
-"""
+
 import random, re
-from uniborg.util import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 import asyncio
 from telethon import events
+from userbot import CMD_HELP
 
-@borg.on(admin_cmd(pattern="degi ?(.*)"))
-async def _(event):
-     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("Wo")
-        await asyncio.sleep(0.7)
-        await event.edit("Degi")
-        await asyncio.sleep(1)
-        await event.edit("Tum")
-        await asyncio.sleep(0.8)
-        await event.edit("Ekbar")
-        await asyncio.sleep(0.9)
-        await event.edit("Mang")
-        await asyncio.sleep(1)
-        await event.edit("Kar")
-        await asyncio.sleep(0.8)
-        await event.edit("Toh")
-        await asyncio.sleep(0.7)
-        await event.edit("Dekho")
-        await asyncio.sleep(1)
-        await event.edit("`Wo Degi Tum Ekbar Mang Kar toh Dekho`")
-
-@borg.on(events.NewMessage(pattern=r"\.nehi", outgoing=True))
+@bot.on(admin_cmd(pattern="degi$"))
+@bot.on(sudo_cmd(pattern="degi$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("`Wo PaKkA DeGi Tu ManG KaR ToH DekH`")
+    event = await edit_or_reply(event, "degi")
+    await event.edit("WO")
+    await asyncio.sleep(1.5)
+    await event.edit("DegI")
+    await asyncio.sleep(1.5)
+    await event.edit("TuM")
+    await asyncio.sleep(1.5)
+    await event.edit("EkbaR")
+    await asyncio.sleep(1.5)
+    await event.edit("ManG")
+    await asyncio.sleep(1.5)
+    await event.edit("KaR")
+    await asyncio.sleep(1.5)
+    await event.edit("ToH")
+    await asyncio.sleep(1.5)
+    await event.edit("DekhO")
+    await asyncio.sleep(1.5)
+    await event.edit("Wo DeGi TuM eKbAr MaNg KaR tOh DeKhO😄")
+
+
+@bot.on(admin_cmd(pattern=f"nehi$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"nehi$", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    event = await edit_or_reply(event, "nehi")
+    await event.edit("`Wo PaKkA DeGi Tu ManG KaR ToH DekH\n AuR NaA De To UskI BheN Ko PakaD😚😚`")
     await asyncio.sleep(999)
+
+CMD_HELP.update(
+    {
+        "degi": """**Plugin : **`degi`
+        
+**Commands in degi are **
+  •  `.degi`
+  •  `.nehi`
+  
+**Function : **__Leni deni hogi bc...__"""
+    }
+)

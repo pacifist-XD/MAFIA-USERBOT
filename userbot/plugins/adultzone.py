@@ -3,9 +3,11 @@
 #will be adding more soon
 
 import os, urllib, requests, asyncio
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd,edit_or_reply, sudo_cmd
+from userbot import CMD_HELP
 
-@borg.on(admin_cmd(pattern=r"boobs"))
+@bot.on(admin_cmd("boobs$"))
+@bot.on(sudo_cmd(pattern="boobs$", allow_sudo=True))
 async def boobs(event):
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
@@ -20,7 +22,8 @@ async def boobs(event):
     await event.delete()
     await a.delete()
 
-@borg.on(admin_cmd(pattern=r"butts"))
+@bot.on(admin_cmd("butts$"))
+@bot.on(sudo_cmd(pattern="butts$", allow_sudo=True))
 async def butts(event):
     if not os.path.isdir(Var.TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Var.TEMP_DOWNLOAD_DIRECTORY)
@@ -34,3 +37,15 @@ async def butts(event):
     os.remove(pic_loc)
     await event.delete()
     await a.delete()
+
+CMD_HELP.update(
+    {
+        "adultzone": "**Plugin : **`adultzone`\
+        \n\n**Syntax : **`.boobs`\
+        \n**Usage :** Searchs and sends random B××Bs image\
+        \n\n**Syntax :**`.butts`\
+        \n**Usage :** Searchs and sends random Butts image\
+        \n\n\n     __**WARNING!! 18+ MODULE**__"
+    }
+)
+

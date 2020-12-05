@@ -1,14 +1,13 @@
-#Ported to Hellbot by @Kraken_The_BadASS. 
-#Original credits to jaddubot owner @Ranger_op
+
 
 """
 Syntax : .gps <location name>
-credits :@ranger_op
 """
-
-#help from @sunda005 and @SpEcHIDe
+# Made by @mrconfused
+# help from @sunda005 and @SpEcHIDe
 # don't edit credits 
-
+# thanka cat userbot
+# porting in mafia userbot
 from geopy.geocoders import Nominatim
 from userbot.utils import admin_cmd
 from telethon.tl import types
@@ -29,7 +28,7 @@ async def gps(event):
 
     await event.edit("Finding😁")
 
-    geolocator = Nominatim(user_agent="catuserbot")
+    geolocator = Nominatim(user_agent="mafiausetbot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:

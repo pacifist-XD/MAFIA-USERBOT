@@ -25,7 +25,7 @@ async def download(event):
         await event.edit("`Please ADD Proper Access Token from github.com`") 
         return   
     if Var.GIT_REPO_NAME is None:
-        await event.edit("`Please ADD Proper Github Repo Name of 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋`")
+        await event.edit("`Please ADD Proper Github Repo Name of Mafia Userbot`")
         return 
     mone = await event.reply("Processing ...")
     if not os.path.isdir(GIT_TEMP_DIR):

@@ -1,14 +1,14 @@
-from userbot import CMD_LIST
+from userbot import CMD_LIST, CMD_HELP
 from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from platform import uname
 import sys
 from telethon import events, functions, __version__
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 
-@command(pattern="^.help ?(.*)")
-#@borg.on(admin_cmd(pattern=r"help ?(.*)"))
+
+@bot.on(admin_cmd(pattern="help ?(.*)", outgoing=True))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!", "-", "_"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -16,7 +16,7 @@ async def cmd_list(event):
         if tgbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
-                string += "⚡️" + i + "\n"
+                string += "🤩️" + i + "\n"
                 for iter_list in CMD_LIST[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
@@ -29,7 +29,7 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-                        caption="**COMMANDS** In Mafia Userbot",
+                        caption="**COMMANDS** In HellBot",
                         reply_to=reply_to_id
                     )
                     await event.delete()
@@ -45,7 +45,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Userbot Helper.. Provided by ✨{DEFAULTUSER}✨ \n
+            help_string = f"""Mafia Userbot Helper Provided by 🔥{DEFAULTUSER}🔥 \n
 `Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,

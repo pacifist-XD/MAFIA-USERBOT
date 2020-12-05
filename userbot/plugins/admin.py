@@ -137,7 +137,7 @@ async def promote(promt):
     hellevent = await edit_or_reply(promt, "`Promoting...`")
     user, rank = await get_user_from_event(promt)
     if not rank:
-        rank = "Admin"
+        rank = "ǟɖʍɨռ"
     if not user:
         return
     try:
@@ -285,14 +285,14 @@ async def startmute(event):
         chat_id = event.chat_id
         if is_muted(userid, chat_id):
             return await event.edit(
-                "This user is already muted🤣🤣🤣"
+                "This user is already muted"
             )
         try:
             mute(userid, chat_id)
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Chup reh lawde.\n**｀-´)⊃━☆ﾟ.*･｡ﾟ **")
+            await event.edit("User muted successfully")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -387,7 +387,7 @@ async def endmute(event):
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Abb bol gendu\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍")
+            await event.edit("User unmuted successfully")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -422,7 +422,7 @@ async def endmute(event):
         except Exception as e:
             return await edit_or_reply(event, f"**Error : **`{str(e)}`")
         await edit_or_reply(
-            event, "Abb bol gendu\n乁( ◔ ౪◔)「    ┑(￣Д ￣)┍"
+            event, "User unmuted successfully"
         )
         if BOTLOG:
             await event.client.send_message(

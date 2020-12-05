@@ -9,7 +9,8 @@ import asyncio
 import os
 import subprocess
 import sys
-from uniborg.util import admin_cmd, humanbytes, progress, time_formatter
+from userbot.utils import admin_cmd, humanbytes, progress, time_formatter
+from userbot import CMD_HELP
 
 @borg.on(admin_cmd(pattern=r"getc"))
 async def get_media(event):
@@ -41,12 +42,12 @@ async def get_media(event):
     output = output.replace("b'","")
     output = output.replace("\n'","")
     await event.edit("Downloaded "+output+" files.")
-             
-             
-             
-             
-             
-             
+
+
+
+
+
+
 @borg.on(admin_cmd(pattern=r"geta"))
 async def get_media(event):
     if event.fwd_from:
@@ -59,8 +60,8 @@ async def get_media(event):
     channel_username= event.text
     command = ['ls','temp','|','wc','-l' ]
     channel_username = channel_username[7:]
- 
-   
+
+
     print(channel_username)
     await event.edit("Downloading All Media From this Channel.")
     msgs = await borg.get_messages(channel_username,limit=3000)
@@ -77,6 +78,17 @@ async def get_media(event):
     output = output.replace("b'","")
     output = output.replace("\n'","")
     await event.edit("Downloaded "+output+" files.")
-             
-             
-             
+
+
+
+CMD_HELP.update(
+    {
+        "channel_download": f"""**Plugin : **`channel_download`
+**Telegram Channel Media Downloader Plugin for userbot.**
+  • **Syntax : **`.geta channel_username` 
+  • **Function : **__will  download all media from channel into your bot server but there is limit of 3000 to prevent API limits.__
+  
+  • **Syntax : **`.getc number channel_username` 
+  • **Function : **__will  download latest given number of media from channel into your bot server .__"""
+    }
+)
