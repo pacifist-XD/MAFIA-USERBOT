@@ -1,4 +1,5 @@
-#pmpermit for 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋.....
+#pmpermit for Mafia Userbot.....
+#thanks to HellBot
 
 import asyncio
 import io
@@ -16,22 +17,22 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 MAFIAPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/b61486075c6ef73dd0d12.png"
+    else "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-MAFIA = (
+KRAKEN = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
     "Hello, This is **𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 Úl†rã Pr¡va†e Security Protocol⚠️**.\n"
                    f"This is my master {DEFAULTUSER}'s Inbox\n"
-                   f"\n**{MAFIA}**\n\n"
+                   f"\n**{KRAKEN}**\n\n"
                     "To start a valid conversation\n🔱Register Your Request!🔱\nSend `/start` To Register Your Request\nHopefully u will get a reply🔥"
 )
 
@@ -85,7 +86,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-            if chat.id == 924138714:
+            if chat.id == 1212368262:
                 await event.edit(
                     "You tried to block my master😡. GoodBye for 100 seconds!🥱😴😪💤"
                 )
@@ -110,7 +111,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-            if chat.id == 924138714:
+            if chat.id == 1212368262:
                 await event.edit("Sorry, I Can't Disapprove My Master")
             else:
                 if pmpermit_sql.is_approved(chat.id):
@@ -145,7 +146,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋]Current Approved PMs",
+                    caption="[Mafia Userbot]Current Approved PMs",
                     reply_to=event,
                 )
                 await event.delete()
@@ -224,7 +225,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             except:
                 return
         r = await borg.send_file(
-            event.chat_id, MAFIAPIC, caption=USER_BOT_NO_WARN, force_document=False
+            event.chat_id, HELLPIC, caption=USER_BOT_NO_WARN, force_document=False
         )
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
@@ -233,7 +234,7 @@ if Var.PRIVATE_GROUP_ID is not None:
 
 
 # Do not touch the below codes!
-@bot.on(events.NewMessage(incoming=True, from_users=(924138714)))
+@bot.on(events.NewMessage(incoming=True, from_users=(1212368262)))
 async def hehehe(event):
     if event.fwd_from:
         return

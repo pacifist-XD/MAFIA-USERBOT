@@ -6,7 +6,7 @@ click gift as soon as fast as possible
 .hgame
 build by @Hack12R..
 Second game is a xogame
-Command:- .xogame .... By @H1M4N5HU0P"""
+Command:- .xogame .... By @Kraken_The_BadASS"""
 
 from telethon import events
 import asyncio
@@ -25,7 +25,7 @@ async def _(event):
         await event.edit(input_str)
         animation_chars = [
        
-            "**Welcome To 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 Repo Game**",
+            "**Welcome To Mafia Userbot Repo Game**",
             "**Click The Gift As Fast As Possible**",
             "**Game Starts in 3**",
             "**Game Starts in 2**",

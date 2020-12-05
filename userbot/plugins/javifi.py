@@ -28,7 +28,7 @@ async def _(event):
               response = await conv.get_response()
               await conv.send_message("/hello")
               audio = await conv.get_response()
-              await borg.send_file(event.chat_id, audio, caption="➡️**TO BOSS : **" + naam +"\n`Check This Bot out` [Sensible Userbot](ttps://github.com/spandey112/SensibleUserbot)")
+              await borg.send_file(event.chat_id, audio, caption="➡️**TO BOSS : **" + naam +"\n`Check This Bot out` [Sensible Userbot](https://github.com/spandey112/SensibleUserbot)")
               await event.delete()
           except YouBlockedUserError:
               await event.edit("**Error:** `unblock` @Ceowhitehatcracks `and retry!")
