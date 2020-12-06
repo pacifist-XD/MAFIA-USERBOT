@@ -18,9 +18,6 @@ except:
     os.system("pip install colour")
 from PIL import Image, ImageDraw, ImageFont
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from wand.color import Color
-from wand.drawing import Drawing
-from wand.image import Image as mafiaimage
 import re
 import time
 import urllib.request
