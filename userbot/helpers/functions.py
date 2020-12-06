@@ -20,7 +20,7 @@ from PIL import Image, ImageDraw, ImageFont
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from wand.color import Color
 from wand.drawing import Drawing
-from wand.image import Image as hellimage
+from wand.image import Image as mafiaimage
 import re
 import time
 import urllib.request
@@ -34,6 +34,7 @@ from validators.url import url
 from bs4 import BeautifulSoup
 from asyncio import sleep
 from emoji import get_emoji_regexp
+from userbot.helpers.functions import deEmojify
 
 MARGINS = [50, 150, 250, 350, 450]
 
@@ -122,10 +123,10 @@ async def make_gif(event, file):
             if response.text.startswith("Send me an animated sticker!"):
                 return "`This file is not supported`"
             response = response if response.media else await conv.get_response()
-            hellresponse = response if response.media else await conv.get_response()
+            mafiaresponse = response if response.media else await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
-            hellfile = await event.client.download_media(hellresponse, "./temp")
-            return await unzip(hellfile)
+            mafiafile = await event.client.download_media(mafiaresponse, "./temp")
+            return await unzip(mafiafile)
         except YouBlockedUserError:
             return "Unblock @tgstogifbot"
 
@@ -232,8 +233,8 @@ async def solarize(imagefile, endname):
 async def iphonex(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=iphonex&url={text}").json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -247,8 +248,8 @@ async def baguette(text):
         f"https://nekobot.xyz/api/imagegen?type=baguette&url={text}"
     ).json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -260,8 +261,8 @@ async def baguette(text):
 async def threats(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=threats&url={text}").json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -275,8 +276,8 @@ async def threats(text):
 async def lolice(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=lolice&url={text}").json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -290,8 +291,8 @@ async def lolice(text):
 async def trash(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=trash&url={text}").json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -305,8 +306,8 @@ async def trash(text):
 async def awooify(text):
     r = requests.get(f"https://nekobot.xyz/api/imagegen?type=awooify&url={text}").json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -322,8 +323,8 @@ async def trap(text1, text2, text3):
         f"https://nekobot.xyz/api/imagegen?type=trap&name={text1}&author={text2}&image={text3}"
     ).json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
@@ -339,8 +340,8 @@ async def phcomment(text1, text2, text3):
         f"https://nekobot.xyz/api/imagegen?type=phcomment&image={text1}&text={text2}&username={text3}"
     ).json()
     kraken = r.get("message")
-    hellurl = url(kraken)
-    if not hellurl:
+    mafiaurl = url(kraken)
+    if not mafiaurl:
         return "check syntax once more"
     with open("temp.png", "wb") as f:
         f.write(requests.get(kraken).content)
