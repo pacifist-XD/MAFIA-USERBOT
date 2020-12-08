@@ -17,15 +17,15 @@ mafia = bot.uid
 PM_IMG = "https://telegra.ph/file/b61486075c6ef73dd0d12.png"
 pm_caption = "__**🔥🔥𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 𝕀𝕊 𝔸𝕃𝕀𝕍𝔼🔥🔥**__\n\n"
 
-pm_caption += f"               👑𝕄𝔸𝕊𝕋𝔼ℝ👑\n**『[{DEFAULTUSER}](tg://user?id={mafia})』**\n\n"
+pm_caption += f"                 👑𝕄𝔸𝕊𝕋𝔼ℝ👑\n**  『😈[{DEFAULTUSER}](tg://user?id={mafia})😈』**\n\n"
 
-pm_caption += "🛡️TELETHON🛡️ : `1.15.0` \n"
+pm_caption += "🛡️TELETHON🛡️ : `1.15.0` \n\n"
 
-pm_caption += f"😈𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋😈       : `{mafiaversion}`\n"
+pm_caption += f"😈𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋😈 : `{mafiaversion}`\n\n"
 
-pm_caption += f"😱Sudo😱            : `{sudou}`\n"
+pm_caption += f"😱Sudo😱            : `{sudou}`\n\n"
 
-pm_caption += "😇CHANNEL😇️   : [ᴊᴏɪɴ](https://t.me/MAFIA_USERBOT)\n"
+pm_caption += "😇CHANNEL😇️   : [ᴊᴏɪɴ](https://t.me/MAFIA_USERBOT)\n\n"
 
 pm_caption += "😎CREATOR😎    : [Himanshu](https://t.me/H1M4N5HU0P)\n\n"
 
