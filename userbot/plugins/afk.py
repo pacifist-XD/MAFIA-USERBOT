@@ -6,8 +6,8 @@ from datetime import datetime
 from telethon import events
 from telethon.tl import functions, types
 
-from ..utils import admin_cmd
-from . import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot.utils import admin_cmd
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 
 global USERAFK_ON
 global afk_time
