@@ -29,7 +29,7 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-                        caption="**COMMANDS** In HellBot",
+                        caption="**COMMANDS** In Mafia Userbot",
                         reply_to=reply_to_id
                     )
                     await event.delete()
