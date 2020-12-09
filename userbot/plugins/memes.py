@@ -850,7 +850,7 @@ async def vapor(vpr):
 @register(outgoing=True, pattern="^.repo$")
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("Click [here](https://github.com/HellBoy-OP/HellBot) to open this 🔥**Lit AF!!**🔥 __Hêllẞø†__ Repo.. Join channel :- @HellBot_Official")
+        await e.edit("Click [here](https://github.com/H1M4N5HU0P/MAFIA-USERBOT) to open this 🔥**Lit AF!!**🔥 __𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋__ Repo.. Join channel :- @MAFIA_USERBOT")
 			  
 			  
 @register(outgoing=True, pattern="^.str(?: |$)(.*)")
@@ -1128,7 +1128,7 @@ async def smrk(smk):
             message = textx
             message = str(message.message)
         if message == 'dele':
-            await smk.edit( message +'te the hell' + "ツ" )
+            await smk.edit( message +'te the mafia' + "ツ" )
             await smk.edit("ツ")
         else:
              smirk = " ツ"
