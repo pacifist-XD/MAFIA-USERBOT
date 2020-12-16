@@ -17,9 +17,13 @@ IS_SELECTED_DIFFERENT_BRANCH = (
 OFFICIAL_UPSTREAM_REPO = Config.UPSTREAM_REPO
 BOT_IS_UP_TO_DATE = "**The 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋** is up-to-date sir."
 NEW_BOT_UP_DATE_FOUND = (
-    "new update found for {branch_name}\n" "changelog: \n\n{changelog}\n" "updating your 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 ..."
+    "new update found for {branch_name}\n"
+    "changelog: \n\n{changelog}\n"
+    "updating your 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 ..."
 )
-NEW_UP_DATE_FOUND = "New update found for {branch_name}\n" "`updating your 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋...`"
+NEW_UP_DATE_FOUND = (
+    "New update found for {branch_name}\n" "`updating your 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋...`"
+)
 REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "master"
 DIFF_MARKER = "HEAD..{remote_name}/{branch_name}"

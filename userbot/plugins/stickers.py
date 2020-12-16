@@ -12,9 +12,10 @@ from telethon.tl.types import (
     InputStickerSetID,
     MessageMediaPhoto,
 )
-from userbot.utils import *
+
 from userbot import CMD_HELP
 from userbot.uniborgConfig import Config
+from userbot.utils import *
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
@@ -99,9 +100,7 @@ async def kang(args):
 
         packname = f"HB_{user.username}_Mafia_{pack}"
         packnick = (
-            f"{mafia} Vol.{pack}"
-            if mafia
-            else f"@{user.username}'s Mafia Vol.{pack}"
+            f"{mafia} Vol.{pack}" if mafia else f"@{user.username}'s Mafia Vol.{pack}"
         )
         cmd = "/newpack"
         file = io.BytesIO()

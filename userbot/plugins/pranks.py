@@ -1,6 +1,5 @@
-
-#credits to @mrconfused and @sandy1709
-#thanks Cat Userbot And mafiaBot
+# credits to @mrconfused and @sandy1709
+# thanks Cat Userbot And mafiaBot
 # Kang with credits. Using in Mafia Userbot...
 #    Copyright (C) 2020  sandeep.n(π.$)
 #    This program is free software: you can redistribute it and/or modify
@@ -18,14 +17,20 @@ import base64
 import os
 
 from telegraph import exceptions, upload_file
-from telethon import events
-from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot import CMD_HELP
+from userbot.helpers.functions import (
+    convert_toimage,
+    deEmojify,
+    phcomment,
+    threats,
+    trap,
+    trash,
+)
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 from . import *
-from userbot.helpers.functions import convert_toimage, threats, trash, trap, phcomment, deEmojify, iphonex
 
 
 @bot.on(admin_cmd(pattern="threats(?: |$)(.*)"))
@@ -35,12 +40,16 @@ async def mafiabot(mafiamemes):
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(mafiamemes, "`Media file not supported. Reply to a supported media`")
+        await edit_or_reply(
+            mafiamemes, "`Media file not supported. Reply to a supported media`"
+        )
         return
     if replied.media:
         mafiamemmes = await edit_or_reply(mafiamemes, "`Detecting Threats.........`")
     else:
-        await edit_or_reply(mafiamemes, "`Media file not supported. Reply to a suported media`")
+        await edit_or_reply(
+            mafiamemes, "`Media file not supported. Reply to a suported media`"
+        )
         return
     try:
         mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -84,12 +93,16 @@ async def mafiabot(mafiamemes):
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(mafiamemes, "`Media file not supported. Reply to a suported media`")
+        await edit_or_reply(
+            mafiamemes, "`Media file not supported. Reply to a suported media`"
+        )
         return
     if replied.media:
         mafiamemmes = await edit_or_reply(mafiamemes, "`Detecting Trash....`")
     else:
-        await edit_or_reply(mafiamemes, "`Media file not supported. Reply to a suported media`")
+        await edit_or_reply(
+            mafiamemes, "`Media file not supported. Reply to a suported media`"
+        )
         return
     try:
         mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -143,12 +156,16 @@ async def mafiabot(mafiamemes):
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(mafiamemes, "Media file not supported. Reply to a suported media")
+        await edit_or_reply(
+            mafiamemes, "Media file not supported. Reply to a suported media"
+        )
         return
     if replied.media:
         mafiamemmes = await edit_or_reply(mafiamemes, "`Trapping.....`")
     else:
-        await edit_or_reply(mafiamemes, "Media file not supported. Reply to a suported media")
+        await edit_or_reply(
+            mafiamemes, "Media file not supported. Reply to a suported media"
+        )
         return
     try:
         mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -202,12 +219,16 @@ async def mafiabot(mafiamemes):
     if not os.path.isdir("./temp/"):
         os.makedirs("./temp/")
     if not replied:
-        await edit_or_reply(mafiamemes, "Media file not supported. Reply to a suported media")
+        await edit_or_reply(
+            mafiamemes, "Media file not supported. Reply to a suported media"
+        )
         return
     if replied.media:
         mafiamemmes = await edit_or_reply(mafiamemes, "`Making A Comment`.")
     else:
-        await edit_or_reply(mafiamemes, "Media file not supported. Reply to a suported media")
+        await edit_or_reply(
+            mafiamemes, "Media file not supported. Reply to a suported media"
+        )
         return
     try:
         mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
@@ -242,7 +263,7 @@ async def mafiabot(mafiamemes):
     mafia = await phcomment(mafia, text, username)
     await mafiamemmes.delete()
     await mafiamemes.client.send_file(mafiamemes.chat_id, mafia, reply_to=replied)
-  
+
 
 CMD_HELP.update(
     {

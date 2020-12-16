@@ -1,5 +1,5 @@
-#pmpermit for Mafia Userbot.....
-#thanks to HellBot
+# pmpermit for Mafia Userbot.....
+# thanks to HellBot
 
 import asyncio
 import io
@@ -31,9 +31,9 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
     "Hello, This is **𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 Úl†rã Pr¡va†e Security Protocol⚠️**.\n"
-                   f"This is my master {DEFAULTUSER}'s Inbox\n"
-                   f"\n**{KRAKEN}**\n\n"
-                    "To start a valid conversation\n🔱Register Your Request!🔱\nSend `/start` To Register Your Request\nHopefully u will get a reply🔥"
+    f"This is my master {DEFAULTUSER}'s Inbox\n"
+    f"\n**{KRAKEN}**\n\n"
+    "To start a valid conversation\n🔱Register Your Request!🔱\nSend `/start` To Register Your Request\nHopefully u will get a reply🔥"
 )
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -241,5 +241,7 @@ async def hehehe(event):
     chat = await event.get_chat()
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
-            pmpermit_sql.approve(chat.id, "**My Boss iz here.... It's your lucky day nibba😏**")
+            pmpermit_sql.approve(
+                chat.id, "**My Boss iz here.... It's your lucky day nibba😏**"
+            )
             await borg.send_message(chat, "**Here comes my Master! Lucky you!!😏**")

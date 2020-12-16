@@ -1,16 +1,21 @@
-from userbot import CMD_LIST, CMD_HELP
-from userbot import ALIVE_NAME
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
-from platform import uname
-import sys
-from telethon import events, functions, __version__
+from telethon import functions
+
+from userbot import ALIVE_NAME, CMD_LIST
+from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 
 
 @bot.on(admin_cmd(pattern="help ?(.*)", outgoing=True))
 async def cmd_list(event):
-    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!", "-", "_"):
+    if not event.text[0].isalpha() and event.text[0] not in (
+        "/",
+        "#",
+        "@",
+        "!",
+        "-",
+        "_",
+    ):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
         if tgbotusername is None or input_str == "text":
@@ -30,7 +35,7 @@ async def cmd_list(event):
                         force_document=True,
                         allow_cache=False,
                         caption="**COMMANDS** In Mafia Userbot",
-                        reply_to=reply_to_id
+                        reply_to=reply_to_id,
                     )
                     await event.delete()
             else:
@@ -48,15 +53,13 @@ async def cmd_list(event):
             help_string = f"""Mafia Userbot Helper Provided by 🔥{DEFAULTUSER}🔥 \n
 `Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                help_string
+                tgbotusername, help_string
             )
             await results[0].click(
-                event.chat_id,
-                reply_to=event.reply_to_msg_id,
-                hide_via=True
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
+
 
 @borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):

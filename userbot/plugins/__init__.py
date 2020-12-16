@@ -1,6 +1,4 @@
 from userbot import simpdef
 
-
-simpmusic = simpdef.simpmusic 
+simpmusic = simpdef.simpmusic
 simpmusicvideo = simpdef.simpmusicvideo
-

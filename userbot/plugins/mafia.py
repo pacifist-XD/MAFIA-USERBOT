@@ -1,9 +1,8 @@
 import time
-from datetime import datetime
-from io import BytesIO
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import ALIVE_NAME, StartTime, mafiaversion
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 async def reply_id(event):
     reply_to_id = None
@@ -13,6 +12,7 @@ async def reply_id(event):
         reply_to_id = event.reply_to_msg_id
     return reply_to_id
 
+
 DEFAULTUSER = ALIVE_NAME or "Mafia Userbot"
 MAFIA_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "Legendary Af Mafia Userbot"
@@ -20,6 +20,7 @@ CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "Legendary Af Mafia Userbot"
 USERID = bot.uid
 
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -47,16 +48,18 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
-    
+
+
 uptime = get_readable_time((time.time() - StartTime))
-  
+
+
 @bot.on(admin_cmd(outgoing=True, pattern="mafia$"))
 @bot.on(sudo_cmd(pattern="mafia$", allow_sudo=True))
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
     reply_to_id = await reply_id(alive)
-    
+
     if MAFIA_IMG:
         mafia_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         mafia_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"

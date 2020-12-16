@@ -5,16 +5,13 @@ Available Commands:
 
 .lucky"""
 
-from telethon import events
 
 import asyncio
+
 from uniborg.util import admin_cmd
 
 
-
-
 @borg.on(admin_cmd(pattern="lucky"))
-
 async def _(event):
 
     if event.fwd_from:
@@ -25,33 +22,31 @@ async def _(event):
 
     animation_ttl = range(0, 17)
 
-    #input_str = event.pattern_match.group(1)
+    # input_str = event.pattern_match.group(1)
 
-    #if input_str == "lucky":
+    # if input_str == "lucky":
 
     await event.edit("Lucky...🤑🤑")
 
     animation_chars = [
-        
-            "⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
-            "⬛⬜⬜⬜⬜\n👇⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
-            "⬛⬛⬜⬜⬜\n⬜👇⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
-            "⬛⬛⬛⬜⬜\n⬜⬜👇⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
-            "⬛⬛⬛⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",    
-            "⬛⬛⬛⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
-            "⬛⬛⬛⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
-            "⬛⬛⬛⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜\n⬜⬜⬜⬜⬜",
-            "⬛⬛⬛⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬛⬛⬛⬜⬜\n⬜⬜👇⬜⬜\n⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬛⬛⬜⬜⬜\n⬜👇⬜⬜⬜\n⬜[🎁](https://t.me/MAFIA_USERBOT)⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬛⬜⬜⬜⬜\n👇⬜⬜⬜⬜\n[🎁](https://t.me/MAFIA_USERBOT)⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
-            "⬜⬜⬜⬜\n⬜⬜⬜⬜\n⬜⬜⬜⬜\n⬜⬜⬜⬜",
-            "⬜⬜⬜\n⬜⬜⬜\n⬜⬜⬜",
-            "⬜⬜\n⬜⬜",
-            "[🎁👈🏻Ye le gift](https://t.me/MAFIA_USERBOT)"
-
- ]
+        "⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬜⬜⬜⬜\n👇⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬛⬜⬜⬜\n⬜👇⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬛⬛⬜⬜\n⬜⬜👇⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬛⬛⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬛⬛⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬛⬛⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜",
+        "⬛⬛⬛⬛⬜\n⬜⬜⬜⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜\n⬜⬜⬜⬜⬜",
+        "⬛⬛⬛⬛⬜\n⬜⬜⬜👇⬜\n⬜⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
+        "⬛⬛⬛⬜⬜\n⬜⬜👇⬜⬜\n⬜⬜[🎁](https://t.me/MAFIA_USERBOT)⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
+        "⬛⬛⬜⬜⬜\n⬜👇⬜⬜⬜\n⬜[🎁](https://t.me/MAFIA_USERBOT)⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
+        "⬛⬜⬜⬜⬜\n👇⬜⬜⬜⬜\n[🎁](https://t.me/MAFIA_USERBOT)⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
+        "⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
+        "⬜⬜⬜⬜\n⬜⬜⬜⬜\n⬜⬜⬜⬜\n⬜⬜⬜⬜",
+        "⬜⬜⬜\n⬜⬜⬜\n⬜⬜⬜",
+        "⬜⬜\n⬜⬜",
+        "[🎁👈🏻Ye le gift](https://t.me/MAFIA_USERBOT)",
+    ]
 
     for i in animation_ttl:
 

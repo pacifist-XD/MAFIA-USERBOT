@@ -1,8 +1,8 @@
 import asyncio
 from collections import deque
 
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot import ALIVE_NAME, CMD_HELP
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 
@@ -42,18 +42,18 @@ async def _(event):
     animation_ttl = range(12)
     event = await edit_or_reply(event, "`Deploying...`")
     animation_chars = [
-     "**Heroku Connecting To Latest [Github Build](H1M4N5HU0P/MAFIA-USERBOT)**",
-            f"**Build started by user** {DEFAULTUSER}",
-            f"**Deploy** `535a74f0` **by user** **{DEFAULTUSER}**",
-            "**Restarting Heroku Server...**",
-            "**State changed from up to starting**",    
-            "**Stopping all processes with SIGTERM**",
-            "**Process exited with** `status 143`",
-            "**Starting process with command** `python3 -m stdborg`",
-            "**State changed from starting to up**",
-            "__INFO:𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋:Logged in as 557667062__",
-            "__INFO:𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋:Successfully loaded all plugins__",
-            "**Build Succeeded**",
+        "**Heroku Connecting To Latest [Github Build](H1M4N5HU0P/MAFIA-USERBOT)**",
+        f"**Build started by user** {DEFAULTUSER}",
+        f"**Deploy** `535a74f0` **by user** **{DEFAULTUSER}**",
+        "**Restarting Heroku Server...**",
+        "**State changed from up to starting**",
+        "**Stopping all processes with SIGTERM**",
+        "**Process exited with** `status 143`",
+        "**Starting process with command** `python3 -m stdborg`",
+        "**State changed from starting to up**",
+        "__INFO:𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋:Logged in as 557667062__",
+        "__INFO:𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋:Successfully loaded all plugins__",
+        "**Build Succeeded**",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
