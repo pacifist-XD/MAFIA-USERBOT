@@ -1,27 +1,24 @@
+ 
+import asyncio
+
+import requests
 from telethon import functions
 
-from userbot import ALIVE_NAME, CMD_LIST
-from userbot.utils import admin_cmd
+from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
+from userbot.utils import admin_cmd, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 
 
-@bot.on(admin_cmd(pattern="help ?(.*)", outgoing=True))
+@borg.on(admin_cmd(pattern=r"help ?(.*)", outgoing=True))
 async def cmd_list(event):
-    if not event.text[0].isalpha() and event.text[0] not in (
-        "/",
-        "#",
-        "@",
-        "!",
-        "-",
-        "_",
-    ):
+    if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "-", "_", "@"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
         input_str = event.pattern_match.group(1)
         if tgbotusername is None or input_str == "text":
             string = ""
             for i in CMD_LIST:
-                string += "🤩️" + i + "\n"
+                string += "⚡️" + i + "\n"
                 for iter_list in CMD_LIST[i]:
                     string += "    `" + str(iter_list) + "`"
                     string += "\n"
@@ -34,7 +31,7 @@ async def cmd_list(event):
                         out_file,
                         force_document=True,
                         allow_cache=False,
-                        caption="**COMMANDS** In Mafia Userbot",
+                        caption="**COMMANDS** In __**Hêllẞø†**__",
                         reply_to=reply_to_id,
                     )
                     await event.delete()
@@ -42,15 +39,15 @@ async def cmd_list(event):
                 await event.edit(string)
         elif input_str:
             if input_str in CMD_LIST:
-                string = "Commands found in {}:".format(input_str)
+                string = "Commands found in {}:\n".format(input_str)
                 for i in CMD_LIST[input_str]:
-                    string += "    " + i
+                    string += "  " + i
                     string += "\n"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Mafia Userbot Helper Provided by 🔥{DEFAULTUSER}🔥 \n
+            help_string = f"""Userbot Helper.. Provided by ✨{DEFAULTUSER}✨ \n
 `Userbot Helper to reveal all the commands`\n__Do .help plugin_name for commands, in case popup doesn't appear.__"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
@@ -76,7 +73,7 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot Powered by @MAFIA_USERBOT""")
+    await event.edit("""Telethon UserBot Powered by @HellBot_Official""")
 
 
 @borg.on(admin_cmd(pattern="syntax (.*)"))
@@ -87,7 +84,7 @@ async def _(event):
 
     if plugin_name in CMD_LIST:
         help_string = CMD_LIST[plugin_name].__doc__
-        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           @MAFIA_USERBOT"
+        unload_string = f"Use `.unload {plugin_name}` to remove this plugin.\n           @HellBot_Official"
 
         if help_string:
             plugin_syntax = f"Syntax for plugin **{plugin_name}**:\n\n{help_string}\n{unload_string}"
