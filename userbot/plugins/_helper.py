@@ -1,11 +1,7 @@
- 
-import asyncio
-
-import requests
 from telethon import functions
 
-from userbot import ALIVE_NAME, CMD_LIST, SUDO_LIST
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot import ALIVE_NAME, CMD_LIST
+from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 
