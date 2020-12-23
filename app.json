@@ -91,7 +91,7 @@
     },
     "PRIVATE_GROUP_BOT_API_ID": {
       "description": "create a private channel and then type .get_id add that value here for save messages",
-      "value": ""
+      "value": "-1001174481876"
     },
     "PRIVATE_GROUP_ID": {
       "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
@@ -99,7 +99,7 @@
     },
     "PM_LOGGR_BOT_API_ID": {
        "description": "for login private messages create a private channel and do .get_id and add that id", 
-       "value": ""
+       "value": "-1001174481876"
     }, 
     "STRING_SESSION": {
       "description": "Get this value by running https://repl.it/@H1M4N5HU0P/SpotlessShyProgram#main.py ",
