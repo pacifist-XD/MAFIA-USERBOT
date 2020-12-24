@@ -16,7 +16,6 @@ from validators.url import url
 
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import (
-    CMD_HELP,
     hmention,
     name_dl,
     reply_id,
@@ -297,21 +296,3 @@ async def kakashi(event):
             conv.chat_id, [msg_start.id, response.id, r.id, msg.id, details.id, song.id]
         )
 
-
-CMD_HELP.update(
-    {
-        "songs": "__**PLUGIN NAME :** Songs__\
-        \n\n📌** CMD ➥** `.song` <query>  or `.song reply to song name`\
-        \n**USAGE   ➥  **Searches the song you entered in query and sends it,quality of it is 128k\
-        \n\n📌** CMD ➥** `.song320` <query> or `.song320 reply to song name`\
-        \n**USAGE   ➥  **Searches the song you entered in query and sends it,quality of it is 320k\
-        \n\n📌** CMD ➥** `.vsong` <query> or `.vsong reply to song name`\
-        \n**USAGE   ➥  **Searches the video song you entered in query and sends it\
-        \n\n📌** CMD ➥** `.song2` <query>\
-        \n**USAGE   ➥  **Searches the song you entered in query and sends it.\
-        \n\n📌** CMD ➥** `.music` <Artist - Song Title>\
-        \n**USAGE   ➥  **Download your music by just name.\
-        \n\n📌** CMD ➥** `.dzd` <Spotify/Deezer Link>\
-        \n**USAGE   ➥  **Download music from Spotify or Deezer."
-    }
-)
