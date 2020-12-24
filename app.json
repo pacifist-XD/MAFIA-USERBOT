@@ -85,7 +85,7 @@
       "description": "Get this value from my.telegram.org! Putting Others Value May result In Account Ban.",
       "value": ""
     },
-    "PLUGIN_GROUP": {
+    "PLUGIN_CHANNEL": {
       "description": "Create a private group add rose  then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
       "value": "-336323518"
     },
