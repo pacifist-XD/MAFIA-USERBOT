@@ -250,7 +250,7 @@ async def _(event):
         deq.rotate(1)
 
 
-@borg.on(admin_cmd(pattern="heart$"))
+@borg.on(admin_cmd(pattern="cheart$"))
 async def _(event):
     if event.fwd_from:
         return
