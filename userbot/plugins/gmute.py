@@ -44,9 +44,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit(
-            "Ungmuting User..."
-        )
+        await event.edit("Ungmuting User...")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()

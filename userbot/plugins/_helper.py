@@ -100,9 +100,7 @@ async def _(event):
 async def info(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
-        string = (
-            "Total {count} commands found in {plugincount} sudo plugins of 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋\n\n"
-        )
+        string = "Total {count} commands found in {plugincount} sudo plugins of 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋\n\n"
         mafiacount = 0
         plugincount = 0
         for i in sorted(SUDO_LIST):
