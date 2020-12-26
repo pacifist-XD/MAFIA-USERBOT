@@ -52,3 +52,6 @@ def delgvar(variable):
 
 
 globals.py
+
+git_url = "https://github.com/H1M4N5HU0P/MAFIA-USERBOT"
+repo_dir = "./drive"
