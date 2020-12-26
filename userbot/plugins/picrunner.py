@@ -67,7 +67,7 @@ async def animepp():
 @borg.on(admin_cmd(pattern="ppr ?(.*)"))
 async def main(event):
     await event.edit(
-        "**Starting Profile Pic Runner by @MAFIA_USERBOT ..**"
+        "**Starting Profile Pic Runner by @MAFIA_USERBOT..**"
     )  # Owner @H1M4N5HU0P
     while True:
         try:

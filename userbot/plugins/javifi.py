@@ -28,7 +28,7 @@ async def _(event):
                     audio,
                     caption="➡️**TO BOSS : **"
                     + naam
-                    + "\n`Check This Bot out` [Sensible Userbot](https://github.com/spandey112/SensibleUserbot)",
+                    + "\n`Check This Bot out` [Sensible Userbot](ttps://github.com/spandey112/SensibleUserbot)",
                 )
                 await event.delete()
             except YouBlockedUserError:

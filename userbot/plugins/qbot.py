@@ -1,4 +1,4 @@
-# port to Hêllẞø† by @Kraken_The_BadASS
+# port to Mafia Userbot by @H1M4N5HU0P
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -8,7 +8,7 @@ from userbot.utils import admin_cmd
 
 
 # @register(outgoing=True, pattern="^.ss(?: |$)(.*)")
-@borg.on(admin_cmd(pattern=r"ss(?: |$)(.*)"))
+@borg.on(admin_cmd(pattern=r"qbot(?: |$)(.*)"))
 async def _(event):
     if event.fwd_from:
         return

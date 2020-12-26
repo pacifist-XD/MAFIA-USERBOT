@@ -1,5 +1,4 @@
 # pmpermit for Mafia Userbot.....
-# thanks to HellBot
 
 import asyncio
 import io
@@ -11,13 +10,16 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, CUSTOM_PMPERMIT
+from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
+
+PM_TRUE_FALSE = Config.PM_DATA
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 MAFIAPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg"
+    else "https://telegra.ph/file/b61486075c6ef73dd0d12.png"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -27,10 +29,10 @@ KRAKEN = (
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
 USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
-    "Hello, This is **𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 Úl†rã Pr¡va†e Security Protocol⚠️**.\n"
+    "ℍ𝕖𝕝𝕝𝕠, 𝕋𝕙𝕚𝕤 𝕚𝕤 **𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 𝕌𝕝𝕥𝕣𝕒 ℙ𝕣𝕚𝕧𝕒𝕥𝕖 𝕊𝕖𝕔𝕦𝕣𝕚𝕥𝕪 ℙ𝕣𝕠𝕥𝕠𝕔𝕠𝕝⚠️**.\n"
     f"This is my master {DEFAULTUSER}'s Inbox\n"
     f"\n**{KRAKEN}**\n\n"
     "To start a valid conversation\n🔱Register Your Request!🔱\nSend `/start` To Register Your Request\nHopefully u will get a reply🔥"
@@ -146,7 +148,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     out_file,
                     force_document=True,
                     allow_cache=False,
-                    caption="[Mafia Userbot]Current Approved PMs",
+                    caption="[𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋]Current Approved PMs",
                     reply_to=event,
                 )
                 await event.delete()
@@ -192,6 +194,9 @@ if Var.PRIVATE_GROUP_ID is not None:
 
             return
 
+        if PM_TRUE_FALSE == "DISABLE":
+            return
+
         if not pmpermit_sql.is_approved(chat_id):
             # pm permit
             await do_pm_permit_action(chat_id, event)
@@ -199,7 +204,7 @@ if Var.PRIVATE_GROUP_ID is not None:
     async def do_pm_permit_action(chat_id, event):
         if chat_id not in PM_WARNS:
             PM_WARNS.update({chat_id: 0})
-        if PM_WARNS[chat_id] == 5:
+        if PM_WARNS[chat_id] == Config.MAX_FLOOD_IN_P_M_s:
             r = await event.reply(USER_BOT_WARN_ZERO)
             await asyncio.sleep(3)
             await event.client(functions.contacts.BlockRequest(chat_id))

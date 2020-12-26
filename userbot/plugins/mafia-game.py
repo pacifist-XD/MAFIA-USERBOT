@@ -1,4 +1,7 @@
 # Made by @Kraken_the_badass for @HellBot_Official
+# ported in Mafia Userbot
+# plugin edited by @H1M4N5HU0P
+# Thanks to respective HellBot owner @Kraken_the_badass
 
 """Emoji
 Available Commands:

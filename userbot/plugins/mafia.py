@@ -13,9 +13,9 @@ async def reply_id(event):
     return reply_to_id
 
 
-DEFAULTUSER = ALIVE_NAME or "Mafia Userbot"
+DEFAULTUSER = ALIVE_NAME or "Mafia User"
 MAFIA_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "𝕃𝔼𝔾𝔼ℕ𝔻𝔸ℝ𝕐_𝔸𝔽_𝕄𝔸𝔽𝕀𝔸_𝕌𝕊𝔼ℝ𝔹𝕆𝕋"
+CUSTOM_ALIVE_TEXT = Config.ALIVE_MSG or "𝕃𝕖𝕘𝕖𝕟𝕕𝕒𝕣𝕪_𝔸𝔽_𝕄𝕒𝕗𝕚𝕒_𝕌𝕤𝕖𝕣𝕓𝕠𝕥"
 
 USERID = bot.uid
 
@@ -63,11 +63,11 @@ async def amireallyalive(alive):
     if MAFIA_IMG:
         mafia_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         mafia_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
-        mafia_caption += f"__**BOT STATUS**__\n\n"
-        mafia_caption += f"**★ Telethon version :** `1.15.0`\n"
+        mafia_caption += f"__**𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕌𝕊**__\n\n"
+        mafia_caption += f"**★ 𝕋𝕖𝕝𝕖𝕥𝕙𝕠𝕟 𝕧𝕖𝕣𝕤𝕚𝕠𝕟 :** `1.15.0`\n"
         mafia_caption += f"**★ 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 :**`{mafiaversion}`\n"
-        mafia_caption += f"**★ Uptime :** `{uptime}\n`"
-        mafia_caption += f"**★ Master:** {mention}\n"
+        mafia_caption += f"**★ 𝕌𝕡𝕥𝕚𝕞𝕖 :** `{uptime}\n`"
+        mafia_caption += f"**★ 𝕄𝕒𝕤𝕥𝕖𝕣 :** {mention}\n"
         await alive.client.send_file(
             alive.chat_id, MAFIA_IMG, caption=mafia_caption, reply_to=reply_to_id
         )
@@ -77,9 +77,9 @@ async def amireallyalive(alive):
             alive,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
             f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
-            f"__**BOT STATUS**__\n\n"
-            f"**★ Telethon Version :** `1.15.0`\n"
-            f"**★ 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋:** `{mafiaversion}`\n"
-            f"**★ Uptime :** `{uptime}\n`"
-            f"**★ Master:** {mention}\n",
+            f"__**𝔹𝕆𝕋 𝕊𝕋𝔸𝕋𝕌𝕊**__\n\n"
+            f"**★ 𝕋𝕖𝕝𝕖𝕥𝕙𝕠𝕟 𝕧𝕖𝕣𝕤𝕚𝕠𝕟 :** `1.15.0`\n"
+            f"**★ 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 :** `{mafiaversion}`\n"
+            f"**★ 𝕌𝕡𝕥𝕚𝕞𝕖 :** `{uptime}\n`"
+            f"**★ 𝕄𝕒𝕤𝕥𝕖𝕣 :** {mention}\n",
         )

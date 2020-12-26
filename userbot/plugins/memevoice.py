@@ -35,8 +35,8 @@ def deEmojify(inputString: str) -> str:
 
 @borg.on(admin_cmd(pattern="mev(?: |$)(.*)"))
 async def nope(kraken):
-    hell = kraken.pattern_match.group(1)
-    if not hell:
+    mafia = kraken.pattern_match.group(1)
+    if not mafia:
         if kraken.is_reply:
             (await kraken.get_reply_message()).message
         else:
@@ -45,7 +45,7 @@ async def nope(kraken):
             )
             return
 
-    troll = await bot.inline_query("TrollVoiceBot", f"{(deEmojify(hell))}")
+    troll = await bot.inline_query("TrollVoiceBot", f"{(deEmojify(mafia))}")
 
     await troll[0].click(
         kraken.chat_id,

@@ -180,7 +180,7 @@ async def _(event):
                     event.chat_id,
                     downloaded_file_name,
                     thumb=thumb,
-                    caption="reuploaded by [MAFIA USERBOT](https://www.github.com/H1M4N5HU0P/MAFIA-USERBOT",
+                    caption="reuploaded by [𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋](https://www.github.com/H1M4N5HU0P/MAFIA-USERBOT",
                     force_document=False,
                     allow_cache=False,
                     reply_to=event.message.id,

