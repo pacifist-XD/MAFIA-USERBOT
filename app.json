@@ -1,7 +1,7 @@
 {
   "name": "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋",
   "description": "The Mafia Userbot made by @H1M4N5HU0P special thanks to respective HellBot owner @Kraken_The_BadASS. Join for updates related info @MAFIA_USERBOT",
-  "logo": " https://telegra.ph/file/b61486075c6ef73dd0d12.jpg ",
+  "logo": "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg ",
     "keywords": [
     "telegram",
     "userbot",
@@ -22,23 +22,18 @@
       "value": "./userbot/DOWNLOADS/",
       "required": false
     },
-    "F_BAN_LOGGER_GROUP": {
-      "description": "Put Group id Same As PRIVATE_GROUP_ID.",
-      "value": "-336323518",
-      "required": false
-    },
     "ALIVE_NAME": {
-      "description": "Fill your Full name or Username like @H1M4N5HU0P.",
-      "value": "MAFIA_USERBOT",
+      "description": "Fill your Full name or Username like @H1M4N5HU0P. By default it is Mafia User",
+      "value": "@MAFIA_USERBOT",
       "required": false
     },
     "ALIVE_MSG": {
-      "description": "Set Custom awake Message When entering .mafia command.",
-      "value": "😈MAFIA USERBOT OP😈",
+      "description": "Set Custom Alive Message When entering .mafia Command.",
+      "value": "😈MAFIA USERBOT IS ALIVE😈",
       "required": false
     },
-    "ALIVE_PHOTO": {
-      "description": "put here any telegraph media link for alive pic.",
+    "ALIVE_PIC": {
+      "description": "Put here any telegraph media link for alive pic in .hell command.",
       "value": "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg",
       "required": false
     },
@@ -48,26 +43,26 @@
       "required": false
     },
     "PMPERMIT_PIC": {
-      "description": "put here any telegraph media link for pmpermit custom pic.",
+      "description": "put here any telegraph media link for custom pmpermit pic.",
       "value": "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg",
       "required": true
     },
     "CUSTOM_PMPERMIT": {
-      "description": "Your custom pm permit msg.",
-      "value": "",
+      "description": "Enter Your custom pm permit msg.",
+      "value": "PLEASE DO NOT SPAM MY DM, I WILL REPLY YOU AFTER COME BACK ONLINE!",
       "required": false
     },
     "PM_PERMIT_GROUP_ID": {
       "description": "Put an Group Id Same As PRIVATE_GROUP_ID Required For Pmpermit plugin.",
       "value": "-336323518",
-      "required": false
+      "required": true
     },
     "APP_ID": {
       "description": "Get this value from my.telegram.org! Putting Others Value may result In Account Ban.",
       "value": ""
     },
     "REM_BG_API_KEY": {
-      "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
+      "description": "Required for Removing image background. Get your api key from https://www.remove.bg/",
       "value": "",
       "required": false
     },
@@ -102,18 +97,8 @@
        "value": "-1001174481876"
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://repl.it/@H1M4N5HU0P/SpotlessShyProgram#main.py ",
+      "description": "Get this value by running https://repl.it/@H1M4N5HU0P/MAFIA-USERBOT#main.py ",
       "value": ""
-    },
-    "GITHUB_ACCESS_TOKEN": {
-      "description": "Your Github Access Token for gitcommit plugin.Google 'Github access token' to find.",
-      "value": "",
-      "required": false
-    },
-    "GIT_REPO_NAME": {
-      "description": "Your repo name Example: H1M4N5HU0P/MAFIA-USERBOT , but GITHUB_ACCESS_TOKEN must be setup first.",
-      "value": "",
-      "required": false
     },
     "HEROKU_API_KEY": {
       "description": "Go to https://dashboard.heroku.com/account, scroll down and press Reveal API.Required for updater to work.",
@@ -127,7 +112,7 @@
     },
     "TG_BOT_TOKEN_BF_HER": {
       "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn on inline Mode on bot settings. Get it.",
-      "value": "1445762068:AAG_-327E_oIzta6TGGbdc6-RqePyM8fyR8"
+      "value": ""
     },
     "CHROME_BIN": {
       "description": "For Carbon.py. Leave as it is. ",
@@ -140,13 +125,8 @@
       "required": false
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the username of your bot",
-      "value": "@MAFIA_PUBLIC_bot"
-    },
-    "DOWNLOAD_PFP_URL_CLOCK": {
-      "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
-      "value": "",
-      "required": false
+      "description": "Needed for inline buttons maker. Make a bot at @BotFather and get the username of your bot",
+      "value": ""
     },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
@@ -165,7 +145,7 @@
     "EMOJI_TO_DISPLAY_IN_HELP": {
       "description": "Set The emojies You Want to Add In Help Command!!",
       "value": "🤖",
-      "required": true
+      "required": false
     }, 
     "TZ": {
       "description": "Required for Correct Time for autopic get from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",

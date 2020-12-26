@@ -14,6 +14,7 @@ bs4
 bwb==3.0.0
 cfscrape
 coffeehouse
+chromedriver_autoinstaller
 cowpy
 cryptg
 dnspython
@@ -21,7 +22,6 @@ emoji
 gTTS-token>=1.1.3
 gTTS>=2.0.1
 gitpython
-glitch_this
 google-api-python-client==1.8.0
 google-auth-oauthlib
 google_images_download>=2.8.0
@@ -35,6 +35,7 @@ humanize
 justwatch
 lxml
 lottie
+nekos.py
 oauth2client
 patool
 psycopg2
@@ -69,5 +70,4 @@ validators
 wikipedia>=1.4.0
 youtube-dl
 youtube-search-python
-covid
 tswift
