@@ -21,5 +21,5 @@ async def _(event):
         await event.edit("__Output Successful__")
         await asyncio.sleep(3.5)
         await event.edit(
-            "Your[𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋](https:/t.me/MAFIA_USERBOT) is working Fine...\n       Join @HellBot_Official For Any Help......"
+            "Your[𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋](https:/t.me/MAFIA_USERBOT) is working Fine...\n       Join @MAFIA_USERBOT For Any Help......"
         )

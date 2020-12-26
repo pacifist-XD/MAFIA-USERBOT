@@ -5,6 +5,7 @@
 # mia, johhny, sunny
 # modi, rahul, trump, gandhiji
 # no offence. Made for fun purpose only
+# ported to Mafia Userbot by @H1M4N5HU0P
 
 from userbot import CMD_HELP
 from userbot.helpers.functions import (

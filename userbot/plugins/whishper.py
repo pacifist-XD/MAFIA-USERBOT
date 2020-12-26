@@ -1,4 +1,5 @@
 # Made by @Kraken_The_BadASS for @HellBot_Official
+# Ported to Mafia Userbot
 
 from userbot.utils import admin_cmd
 
