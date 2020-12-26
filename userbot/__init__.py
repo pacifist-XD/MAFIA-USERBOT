@@ -9,7 +9,7 @@ from userbot.helpers import functions as simpdef
 from var import Var
 
 StartTime = time.time()
-hellversion = "1.9"
+mafiaversion = "1.9"
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -195,4 +195,4 @@ SUDO_LIST = {}
 
 
 from userbot.helpers import *
-from userbot.helpers import functions as helldef
+from userbot.helpers import functions as mafiadef
