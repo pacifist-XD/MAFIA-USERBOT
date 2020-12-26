@@ -14,9 +14,9 @@ from telethon.tl.types import MessageEntityMentionName
 from userbot import ALIVE_NAME, BIO_MSG, CMD_HELP
 from userbot.utils import admin_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
 
-DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "LEGENDARY AF MAFIA USERBOT"
+DEFAULTUSERBIO = str(BIO_MSG) if BIO_MSG else "𝕃𝔼𝔾𝔼ℕ𝔻𝔸ℝ𝕐 𝔸𝔽 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋"
 BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 BOTLOG = True
 

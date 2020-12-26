@@ -14,7 +14,7 @@ async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915
     """Command to get stats about the account"""
-    hell = await edit_or_reply(event, "`Collecting stats...`")
+    mafia = await edit_or_reply(event, "`Collecting stats...`")
     start_time = time.time()
     private_chats = 0
     bots = 0
@@ -82,7 +82,7 @@ async def stats(
     response += (
         f"📌 **From The DataBase Of** :- [𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋](https://t.me/MAFIA_USERBOT)"
     )
-    await hell.edit(response)
+    await mafia.edit(response)
 
 
 def make_mention(user):

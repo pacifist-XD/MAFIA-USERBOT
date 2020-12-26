@@ -1,4 +1,4 @@
-# Ported to Hêllẞø† by @Kraken_The_BadASS
+# Ported to Mafia Userboy by @H1M4N5HU0P
 # Thanks to @starkxd for this pluhin
 # Keep credit bitches...
 
@@ -146,7 +146,7 @@ async def gspider(userbot):
     except:
         return await friday.edit("Someting Went Wrong 🤔")
     if user:
-        if user.id == 924138714:
+        if user.id == 1212368262:
             return await friday.edit(
                 "**You Cant gban him... as a result you can not ungban him... He is My Creator!**"
             )

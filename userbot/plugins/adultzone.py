@@ -1,5 +1,5 @@
 # credits to userge
-# ported to Hellbot by @kraken_the_badass
+# ported to Mafia Userbot by @H1M4N5HU0P
 # will be adding more soon
 
 import asyncio
@@ -8,8 +8,8 @@ import urllib
 
 import requests
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot import *
+from userbot.utils import *
 
 
 @bot.on(admin_cmd("boobs$"))

@@ -12,7 +12,7 @@ from pySmartDL import SmartDL
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.utils import admin_cmd, humanbytes, progress, sudo_cmd
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
 
 
 @bot.on(admin_cmd(pattern="download(?: |$)(.*)", outgoing=True))

@@ -4,8 +4,7 @@ Syntax : .gps <location name>
 # Made by @mrconfused
 # help from @sunda005 and @SpEcHIDe
 # don't edit credits
-# thanka cat userbot
-# porting in mafia userbot
+
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 
@@ -26,7 +25,7 @@ async def gps(event):
 
     await event.edit("Finding😁")
 
-    geolocator = Nominatim(user_agent="mafiausetbot")
+    geolocator = Nominatim(user_agent="catuserbot")
     geoloc = geolocator.geocode(input_str)
 
     if geoloc:

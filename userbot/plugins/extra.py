@@ -90,7 +90,7 @@ async def _(event):
         )
 
 
-@borg.on(admin_cmd("heart$"))
+@borg.on(admin_cmd("cheart$"))
 # @register(outgoing=True, pattern="^.heart$")
 async def _(event):
     if event.fwd_from:
