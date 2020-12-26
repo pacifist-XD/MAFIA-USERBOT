@@ -34,7 +34,7 @@ if ENV:
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
-        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001198699233))
+        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", -1001174481876))
         # TG API limit. An album can have atmost 10 media!
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
@@ -126,6 +126,7 @@ if ENV:
         CHROME_DRIVER = os.environ.get(
             "CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver"
         )
+        CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
         GOOGLE_CHROME_BIN = os.environ.get(
             "GOOGLE_CHROME_BIN", "/app/.apt/usr/bin/google-chrome"
         )
@@ -155,6 +156,7 @@ if ENV:
         UPSTREAM_REPO = os.environ.get(
             "UPSTREAM_REPO", "https://github.com/H1M4N5HU0P/MAFIA-USERBOT"
         )
+        EXTRA_HELLBOT = os.environ.get("EXTRA_HELLBOT", -1001174481876)
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
 
 

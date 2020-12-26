@@ -9,7 +9,7 @@ from userbot.helpers import functions as simpdef
 from var import Var
 
 StartTime = time.time()
-mafiaversion = "1.9"
+hellversion = "1.9"
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -136,7 +136,7 @@ if bool(ENV):
 
     # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
-        "UPSTREAM_REPO_URL", "https://github.com/H1M4N5U0P/MAFIA-USERBOT.git"
+        "UPSTREAM_REPO_URL", "https://github.com/H1M4N5HU0P/MAFIA-USERBOT.git"
     )
 
     # Last.fm Module
@@ -195,4 +195,4 @@ SUDO_LIST = {}
 
 
 from userbot.helpers import *
-from userbot.helpers import functions as mafiadef
+from userbot.helpers import functions as helldef
