@@ -7,7 +7,7 @@ from userbot import ALIVE_NAME, bot
 from userbot.utils import admin_cmd, edit_or_reply, load_module, remove_plugin
 
 DELETE_TIMEOUT = 5
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "MAFIA USERBOT"
 
 
 @bot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
@@ -55,7 +55,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "Plugin successfully installed\n @HellBot_Official `{}`".format(
+                    "Plugin successfully installed\n @MAFIA_USERBOT `{}`".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
