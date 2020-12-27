@@ -142,7 +142,7 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await mafiaevent.edit("`Promoted Successfully!` Promoted By @MAFIA_USERBOT")
+        await mafiaevent.edit("`Promoted Successfully!` Promoted By [𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋](https://t.me/MAFIA_USERBOT)")
     except BadRequestError:
         await mafiaevent.edit(NO_PERM)
         return
@@ -184,7 +184,7 @@ async def demote(dmod):
     except BadRequestError:
         await mafiaevent.edit(NO_PERM)
         return
-    await mafiaevent.edit("`Demoted retard Successfully!` Demoted By @MAFIA_USERBOT")
+    await mafiaevent.edit("`Demoted retard Successfully!` Promoted By [𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋](https://t.me/MAFIA_USERBOT)")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -493,9 +493,7 @@ async def kick(usr):
             f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await mafiaevent.edit(
-            f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`"
-        )
+        await mafiaevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
