@@ -493,7 +493,9 @@ async def kick(usr):
             f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await mafiaevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+        await mafiaevent.edit(
+            f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`"
+        )
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
