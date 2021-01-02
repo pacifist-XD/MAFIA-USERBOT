@@ -2,9 +2,10 @@ import asyncio
 import os
 from datetime import datetime
 from pathlib import Path
-
-from userbot import ALIVE_NAME, bot
-from userbot.utils import admin_cmd, edit_or_reply, load_module, remove_plugin
+from telethon.tl.types import InputMessagesFilterDocument
+from userbot.utils import admin_cmd, load_module, remove_plugin, edit_or_reply
+from userbot import ALIVE_NAME
+from userbot import bot
 
 DELETE_TIMEOUT = 5
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
@@ -37,7 +38,6 @@ async def send(event):
     else:
         await edit_or_reply(event, "File Is Not Found In Your Mafia Userbot")
 
-
 @bot.on(admin_cmd(pattern="install"))
 async def install(event):
     if event.fwd_from:
@@ -55,7 +55,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "Plugin successfully installed\n @HellBot_Official `{}`".format(
+                    "Plugin successfully installed\n @MAFIA_USERBOT `{}`".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
@@ -70,7 +70,6 @@ async def install(event):
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
-
 @bot.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
 async def unload(event):
     if event.fwd_from:
@@ -81,7 +80,9 @@ async def unload(event):
         await event.edit(f"Successfully unloaded {shortname}")
     except Exception as e:
         await event.edit(
-            "Successfully unloaded {shortname}\n{}".format(shortname, str(e))
+            "Successfully unloaded {shortname}\n{}".format(
+                shortname, str(e)
+            )
         )
 
 
