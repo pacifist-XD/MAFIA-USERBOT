@@ -12,7 +12,7 @@ else:
 
 mafia = bot.uid
 
-PM_IMG = "https://telegra.ph/file/b61486075c6ef73dd0d12.png"
+PM_IMG = "https://telegra.ph/file/502d3b7372c1c395bba5a.mp4"
 pm_caption = "__**🔥🔥𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 𝕀𝕊 𝔸𝕃𝕀𝕍𝔼🔥🔥**__\n\n"
 
 pm_caption += (
