@@ -40,7 +40,7 @@ USER_BOT_NO_WARN = (
 
 if Var.PRIVATE_GROUP_ID is not None:
 
-    @borg.on(admin_cmd(pattern="allow|a ?(.*)"))
+    @borg.on(admin_cmd(pattern="allow|.a ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -79,7 +79,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await rko.delete()
 
-    @borg.on(admin_cmd(pattern="block|b ?(.*)"))
+    @borg.on(admin_cmd(pattern="block|.b ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -104,7 +104,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await asyncio.sleep(3)
                     await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @borg.on(admin_cmd(pattern="disallow|da ?(.*)"))
+    @borg.on(admin_cmd(pattern="disallow|.da ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -124,7 +124,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                         )
                     )
 
-    @borg.on(admin_cmd(pattern="listallowed|la"))
+    @borg.on(admin_cmd(pattern="listallowed|.la"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
