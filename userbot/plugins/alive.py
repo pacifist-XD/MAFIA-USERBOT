@@ -59,7 +59,7 @@ pm_caption += "      [🔥REPO🔥](https://github.com/H1M4N5HU0P/MAFIA-USERBOT)
 @borg.on(admin_cmd(pattern=r"alive"))
 
 async def amireallyalive(yes):
-    chat = await yes.get_chat()
+    await alive.get_chat()
     await alive.delete()
     
     on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
