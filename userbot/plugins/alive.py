@@ -20,6 +20,13 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊�
 # Kang with credits else gay...
 # alive.py for ÂÝŮ$HópBØȚ
 
+ludosudo = Config.SUDO_USERS
+
+if ludosudo:
+    sudou = "True"
+else:
+    sudou = "False"
+
 mafia = bot.uid
 
 edit_time = 5
@@ -47,7 +54,7 @@ pm_caption += "😎CREATOR😎    : [Himanshu](https://t.me/H1M4N5HU0P)\n\n"
 
 pm_caption += "🤩SUPPORTER🤩    :[HellBoy](https://t.me/kraken_the_badass)\n\n"
 
-pm_caption += "      [✨REPO✨](https://github.com/H1M4N5HU0P/MAFIA-USERBOT) 🔹 [📜License📜](https://github.com/H1M4N5HU0P/MAFIA-USERBOT/blob/main/LICENSE)"
+pm_caption += "      [🔥REPO🔥](https://github.com/H1M4N5HU0P/MAFIA-USERBOT) 🔹 [📜License📜](https://github.com/H1M4N5HU0P/MAFIA-USERBOT/blob/main/LICENSE)"
 
 @borg.on(admin_cmd(pattern=r"alive"))
 
