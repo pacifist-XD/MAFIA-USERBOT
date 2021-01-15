@@ -64,28 +64,28 @@ pm_caption += "      [🔥REPO🔥](https://github.com/H1M4N5HU0P/MAFIA-USERBOT)
 async def amireallyalive(alive):
     await alive.get_chat()   
     
-    on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
+    on = await borg.send_file(alive.chat_id, file=file1,caption=pm_caption)
 
     await asyncio.sleep(edit_time)
-    ok = await borg.edit_message(yes.chat_id, on, file=file2) 
+    ok = await borg.edit_message(alive.chat_id, on, file=file2) 
 
     await asyncio.sleep(edit_time)
-    ok2 = await borg.edit_message(yes.chat_id, ok, file=file3)
+    ok2 = await borg.edit_message(alive.chat_id, ok, file=file3)
 
     await asyncio.sleep(edit_time)
-    ok3 = await borg.edit_message(yes.chat_id, ok2, file=file1)
+    ok3 = await borg.edit_message(alive.chat_id, ok2, file=file1)
     
     await asyncio.sleep(edit_time)
-    ok4 = await borg.edit_message(yes.chat_id, ok3, file=file3)
+    ok4 = await borg.edit_message(alive.chat_id, ok3, file=file3)
     
     await asyncio.sleep(edit_time)
-    ok5 = await borg.edit_message(yes.chat_id, ok4, file=file2)
+    ok5 = await borg.edit_message(alive.chat_id, ok4, file=file2)
     
     await asyncio.sleep(edit_time)
-    ok6 = await borg.edit_message(yes.chat_id, ok5, file=file1)
+    ok6 = await borg.edit_message(alive.chat_id, ok5, file=file1)
     
     await asyncio.sleep(edit_time)
-    ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
+    ok7 = await borg.edit_message(alive.chat_id, ok6, file=file4)
     await alive.delete()
     
     """ For .alive command, check if the bot is running.  """
