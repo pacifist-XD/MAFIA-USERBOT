@@ -56,9 +56,10 @@ pm_caption += "🤩SUPPORTER🤩    :[HellBoy](https://t.me/kraken_the_badass)\n
 
 pm_caption += "      [🔥REPO🔥](https://github.com/H1M4N5HU0P/MAFIA-USERBOT) 🔹 [📜License📜](https://github.com/H1M4N5HU0P/MAFIA-USERBOT/blob/main/LICENSE)"
 
-@borg.on(admin_cmd(pattern=r"alive"))
-
-async def amireallyalive(yes):
+# @command(outgoing=True, pattern="^.alive$")
+@bot.on(admin_cmd(outgoing=True, pattern="alive$"))
+@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+async def amireallyalive(alive):
     await alive.get_chat()
     await alive.delete()
     
@@ -87,5 +88,5 @@ async def amireallyalive(yes):
 
     
     """ For .alive command, check if the bot is running.  """
-    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
+    await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
     await alive.delete()
