@@ -62,8 +62,7 @@ pm_caption += "      [🔥REPO🔥](https://github.com/H1M4N5HU0P/MAFIA-USERBOT)
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
 @bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
 async def amireallyalive(alive):
-    await alive.get_chat()
-    await alive.delete()
+    await alive.get_chat()   
     
     on = await borg.send_file(yes.chat_id, file=file1,caption=pm_caption)
 
@@ -87,7 +86,7 @@ async def amireallyalive(alive):
     
     await asyncio.sleep(edit_time)
     ok7 = await borg.edit_message(yes.chat_id, ok6, file=file4)
-
+    await alive.delete()
     
     """ For .alive command, check if the bot is running.  """
     await borg.send_file(alive.chat_id, PM_IMG, caption=pm_caption)
