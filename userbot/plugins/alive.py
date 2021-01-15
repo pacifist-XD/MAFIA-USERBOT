@@ -20,6 +20,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ÂÝŮ$HópBØȚ"
 # Kang with credits else gay...
 # alive.py for ÂÝŮ$HópBØȚ
 
+mafia = bot.uid
+
 edit_time = 5
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/87bf8d6c308ee281068f2.png"
