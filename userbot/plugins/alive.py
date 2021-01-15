@@ -9,10 +9,10 @@ import asyncio
 import random
 from telethon import events
 from userbot.utils import admin_cmd
-from userbot import ALIVE_NAME
+from userbot import ALIVE_NAME, mafiaversion
 from telethon.tl.types import ChannelParticipantsAdmins
 # 🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔🤔
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "ÂÝŮ$HópBØȚ"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋"
 
 # Thanks to Sipak bro and Raganork.. 
 # animation Idea by @NOOB_GUY_OP (Sipakisking)
@@ -24,10 +24,10 @@ mafia = bot.uid
 
 edit_time = 5
 """ =======================CONSTANTS====================== """
-file1 = "https://telegra.ph/file/87bf8d6c308ee281068f2.png"
-file2 = "https://telegra.ph/file/88b9948f4a5c90f106d18.png"
-file3 = "https://telegra.ph/file/efa21255e77f4ba3b6aa2.png"
-file4 = "https://telegra.ph/file/56bd966cd3d76d977a3f7.mp4"
+file1 = "https://telegra.ph/file/502d3b7372c1c395bba5a.mp4"
+file2 = "https://telegra.ph/file/d938d8f4ecaf2d6e70d31.mp4"
+file3 = "https://telegra.ph/file/52e33f519c5b932082298.mp4"
+file4 = "https://telegra.ph/file/cfd9a3fa2c8a7aba0d5ab.jpg"
 """ =======================CONSTANTS====================== """
 pm_caption = "__**🔥🔥𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 𝕀𝕊 𝔸𝕃𝕀𝕍𝔼🔥🔥**__\n\n"
 
