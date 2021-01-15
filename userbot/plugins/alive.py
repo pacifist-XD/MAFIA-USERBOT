@@ -29,7 +29,7 @@ else:
 
 mafia = bot.uid
 
-edit_time = 5
+edit_time = 10
 """ =======================CONSTANTS====================== """
 file1 = "https://telegra.ph/file/502d3b7372c1c395bba5a.mp4"
 file2 = "https://telegra.ph/file/d938d8f4ecaf2d6e70d31.mp4"
