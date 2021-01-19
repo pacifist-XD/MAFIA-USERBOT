@@ -23,13 +23,13 @@ else:
 CMD_LIST = {}
 # for later purposes
 CMD_HELP = {}
+BRAIN_CHECKER = []
 INT_PLUG = ""
 LOAD_PLUG = {}
 
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
-
-CAT_ID = ["1289422521"]
+MAFIA_ID = ["1212368262"]
 
 """ PPE initialization. """
 
@@ -196,3 +196,4 @@ SUDO_LIST = {}
 
 from userbot.helpers import *
 from userbot.helpers import functions as mafiadef
+from userbot.cmdhelp import CmdHelp
