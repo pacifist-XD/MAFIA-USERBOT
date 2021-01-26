@@ -1,7 +1,7 @@
 import asyncio
 
-from hellbot import *
-from hellbot.utils import *
+from mafiabot import *
+from mafiabot.utils import *
 
 
 
