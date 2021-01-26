@@ -56,6 +56,9 @@ def load_module(shortname):
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
         sys.modules["uniborg.util"] = userbot.utils
+        # support for mafiabot
+        sys.modules["mafiabot.utils"] = userbot.utils
+        sys.modules["mafiabot"] = userbot
         mod.Config = Config
         mod.borg = bot
         mod.edit_or_reply = edit_or_reply
