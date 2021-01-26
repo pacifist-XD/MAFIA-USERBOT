@@ -35,7 +35,6 @@ humanize
 justwatch
 lxml
 lottie
-mafiabot
 nekos.py
 oauth2client
 patool
