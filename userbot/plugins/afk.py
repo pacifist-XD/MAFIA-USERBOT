@@ -1,5 +1,5 @@
 # by uniborg...Thanks @spechide
-# Now will be used in Mafia Userbot too....
+# Now will be used Mafia Userbot too....
 import asyncio
 import datetime
 from datetime import datetime
@@ -8,7 +8,9 @@ from telethon import events
 from telethon.tl import functions, types
 
 from userbot import CMD_HELP
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply
+from userbot.cmdhelp import CmdHelp
+
 
 global USER_AFK  # pylint:disable=E0602
 global afk_time  # pylint:disable=E0602
@@ -38,24 +40,21 @@ async def set_not_afk(event):
             event.chat_id,
             "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
             + total_afk_time
-            + "`",
-            file=mafiapic,
+            + "`", file=mafiapic
         )
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                 "#AFKFALSE \nSet AFK mode to False\n"
                 + "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
-                + total_afk_time,
+                + total_afk_time
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
                 event.chat_id,
                 "Please set `PRIVATE_GROUP_BOT_API_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Ask in @MAFIA_USERBOT to get help setting this value\n\n `{}`".format(
-                    str(e)
-                ),
+                + "Ask in @MAFIA_USERBOT chat to get help setting this value\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True,
             )
@@ -89,11 +88,11 @@ async def on_afk(event):
         return False
     if USER_AFK and not (await event.get_sender()).bot:
         msg = None
-
+        
         message_to_reply = (
             f"Hey!! My master is currently offline... Since when?\n**For** `{total_afk_time}`\n"
             + f"\n\n👇__The Reason Is__👇 :-\n`{reason}`"
-            if reason
+  if reason
             else f"**Heyy!**\n__I am currently unavailable.__\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶"
         )
         msg = await event.reply(message_to_reply, file=mafiapic)
@@ -132,30 +131,21 @@ async def _(event):
         USER_AFK = f"yes: {reason} {mafiapic}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
-                event.chat_id,
-                f"__**I'm going afk🚶**__ \n⚜️ Because `{reason}`",
-                file=mafiapic,
+                event.chat_id, f"__**I'm going afk🚶**__ \n⚜️ Because `{reason}`", file=mafiapic
             )
         else:
-            await borg.send_message(
-                event.chat_id, f"**I am Going afk!**🚶", file=mafiapic
-            )
+            await borg.send_message(event.chat_id, f"**I am Going afk!**🚶", file=mafiapic)
         await asyncio.sleep(0.001)
         await event.delete()
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",
-                file=mafiapic,
+                f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",file=mafiapic
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
 
 
-CMD_HELP.update(
-    {
-        "afk": "**Syntax :** \n✓ .afk <reason> \n✓ .afk <reply to media> \n✓ .afk <reason> <reply to media>\n"
-        "\n**Usage :** Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported."
-        "\n**Note :** You will be automatically marked BTK(Back To Keyboard) when you send a msg in any grp or dm."
-    }
-)
+CmdHelp("afk").add_command(
+  'afk', '<reply to media>/<or type a reson>', 'Marks you AFK(Away from Keyboard) with reason(if given) also shows afk time. Media also supported.'
+).add()
