@@ -1,4 +1,4 @@
-# credits to @mrconfused
+# credits to @mrconfused 
 
 import asyncio
 import datetime
@@ -18,9 +18,11 @@ from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
+from var import Var
+
 from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
 from userbot.helpers.exceptions import CancelProcess
-from var import Var
+from userbot.uniborgConfig import Config
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
@@ -28,6 +30,7 @@ if ENV:
 else:
     if os.path.exists("config.py"):
         from config import Development as Config
+
 
 
 def load_module(shortname):
@@ -56,12 +59,13 @@ def load_module(shortname):
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
         sys.modules["uniborg.util"] = userbot.utils
-        # support for mafiabot
-        sys.modules["mafiabot.utils"] = userbot.utils
-        sys.modules["mafiabot"] = userbot
         mod.Config = Config
         mod.borg = bot
         mod.edit_or_reply = edit_or_reply
+        mod.delete_mafia = delete_mafia
+        # support for mafiabot originals
+        sys.modules["mafiabot.utils"] = userbot.utils
+        sys.modules["mafiabot"] = userbot
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
@@ -88,6 +92,7 @@ def remove_plugin(shortname):
         raise ValueError
 
 
+
 def admin_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
@@ -109,12 +114,12 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                catreg = "^" + Config.COMMAND_HAND_LER
+                mafiareg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                catreg = "^\\" + Config.COMMAND_HAND_LER
+                mafiareg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(catreg + pattern)
+            args["pattern"] = re.compile(mafiareg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -141,12 +146,11 @@ def admin_cmd(pattern=None, command=None, **args):
     # add blacklist chats, UB should not respond in these chats
     args["blacklist_chats"] = True
     black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
-    if len(black_list_chats) > 0:
+    if black_list_chats:
         args["chats"] = black_list_chats
 
     # add blacklist chats, UB should not respond in these chats
     if "allow_edited_updates" in args and args["allow_edited_updates"]:
-        args["allow_edited_updates"]
         del args["allow_edited_updates"]
 
     # check if the plugin should listen for outgoing 'messages'
@@ -175,12 +179,12 @@ def sudo_cmd(pattern=None, command=None, **args):
                 SUDO_LIST.update({file_test: [cmd]})
         else:
             if len(Config.SUDO_COMMAND_HAND_LER) == 2:
-                catreg = "^" + Config.SUDO_COMMAND_HAND_LER
+                mafiareg = "^" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.SUDO_COMMAND_HAND_LER[1]
             elif len(Config.SUDO_COMMAND_HAND_LER) == 1:
-                catreg = "^\\" + Config.SUDO_COMMAND_HAND_LER
+                mafiareg = "^\\" + Config.SUDO_COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(catreg + pattern)
+            args["pattern"] = re.compile(mafiareg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -208,26 +212,96 @@ def sudo_cmd(pattern=None, command=None, **args):
         args["chats"] = black_list_chats
     # add blacklist chats, UB should not respond in these chats
     if "allow_edited_updates" in args and args["allow_edited_updates"]:
-        args["allow_edited_updates"]
         del args["allow_edited_updates"]
     # check if the plugin should listen for outgoing 'messages'
     return events.NewMessage(**args)
 
-
 # https://t.me/c/1220993104/623253
 # https://docs.telethon.dev/en/latest/misc/changelog.html#breaking-changes
-async def edit_or_reply(event, text, parse_mode=None, link_preview=None):
+async def edit_or_reply(
+    event,
+    text,
+    parse_mode=None,
+    link_preview=None,
+    file_name=None,
+    aslink=False,
+    linktext=None,
+    caption=None,
+):
     link_preview = link_preview or False
-    parse_mode = parse_mode or "md"
-    if event.sender_id in Config.SUDO_USERS:
-        reply_to = await event.get_reply_message()
-        if reply_to:
-            return await reply_to.reply(
+    reply_to = await event.get_reply_message()
+    if len(text) < 4096:
+        parse_mode = parse_mode or "md"
+        if event.sender_id in Config.SUDO_USERS:
+            if reply_to:
+                return await reply_to.reply(
+                    text, parse_mode=parse_mode, link_preview=link_preview
+                )
+            return await event.reply(
                 text, parse_mode=parse_mode, link_preview=link_preview
             )
-        return await event.reply(text, parse_mode=parse_mode, link_preview=link_preview)
-    return await event.edit(text, parse_mode=parse_mode, link_preview=link_preview)
+        return await event.edit(text, parse_mode=parse_mode, link_preview=link_preview)
+    asciich = ["*", "`", "_"]
+    for i in asciich:
+        text = re.sub(rf"\{i}", "", text)
+    if aslink:
+        linktext = linktext or "Message was to big so pasted to bin"
+        try:
+            key = (
+                requests.post(
+                    "https://nekobin.com/api/documents", json={"content": text}
+                )
+                .json()
+                .get("result")
+                .get("key")
+            )
+            text = linktext + f" [here](https://nekobin.com/{key})"
+        except:
+            text = re.sub(r"•", ">>", text)
+            kresult = requests.post(
+                "https://del.dog/documents", data=text.encode("UTF-8")
+            ).json()
+            text = linktext + f" [here](https://del.dog/{kresult['key']})"
+        if event.sender_id in Config.SUDO_USERS:
+            if reply_to:
+                return await reply_to.reply(text, link_preview=link_preview)
+            return await event.reply(text, link_preview=link_preview)
+        return await event.edit(text, link_preview=link_preview)
+    file_name = file_name or "output.txt"
+    caption = caption or None
+    with open(file_name, "w+") as output:
+        output.write(text)
+    if reply_to:
+        await reply_to.reply(caption, file=file_name)
+        await event.delete()
+        return os.remove(file_name)
+    if event.sender_id in Config.SUDO_USERS:
+        await event.reply(caption, file=file_name)
+        await event.delete()
+        return os.remove(file_name)
+    await event.client.send_file(event.chat_id, file_name, caption=caption)
+    await event.delete()
+    os.remove(file_name)
 
+async def delete_mafia(event, text, time=None, parse_mode=None, link_preview=None):
+    parse_mode = parse_mode or "md"
+    link_preview = link_preview or False
+    time = time or 5
+    if event.sender_id in Config.SUDO_USERS:
+        reply_to = await event.get_reply_message()
+        mafiaevent = (
+            await reply_to.reply(text, link_preview=link_preview, parse_mode=parse_mode)
+            if reply_to
+            else await event.reply(
+                text, link_preview=link_preview, parse_mode=parse_mode
+            )
+        )
+    else:
+        mafiaevent = await event.edit(
+            text, link_preview=link_preview, parse_mode=parse_mode
+        )
+    await asyncio.sleep(time)
+    return await mafiaevent.delete()
 
 # from paperplaneextended
 on = bot.on
@@ -244,7 +318,7 @@ def on(**args):
 
     return decorater
 
-
+ 
 def errors_handler(func):
     async def wrapper(errors):
         try:
@@ -252,11 +326,14 @@ def errors_handler(func):
         except BaseException:
 
             date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-            new = {"error": str(sys.exc_info()[1]), "date": datetime.datetime.now()}
+            new = {
+                'error': str(sys.exc_info()[1]),
+                'date': datetime.datetime.now()
+            }
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
-            link = "[here](https://t.me/H1M4N5HU0P)"
+            link = "[here](https://t.me/sn12384)"
             text += "If you wanna you can report it"
             text += f"- just forward this message {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
@@ -279,15 +356,17 @@ def errors_handler(func):
             ftext += str(sys.exc_info()[1])
             ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
 
-            command = 'git log --pretty=format:"%an: %s" -5'
+            command = "git log --pretty=format:\"%an: %s\" -5"
 
             ftext += "\n\n\nLast 5 commits:\n"
 
             process = await asyncio.create_subprocess_shell(
-                command, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-            )
+                command,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE)
             stdout, stderr = await process.communicate()
-            result = str(stdout.decode().strip()) + str(stderr.decode().strip())
+            result = str(stdout.decode().strip()) \
+                + str(stderr.decode().strip())
 
             ftext += result
 

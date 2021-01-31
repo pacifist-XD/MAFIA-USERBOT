@@ -9,7 +9,7 @@ from userbot.uniborgConfig import Config
 from var import Var
 
 StartTime = time.time()
-mafiaversion = "1.9" 
+mafiaversion = "2.0" 
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -31,7 +31,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-MAFIA_ID = ["1212368262"]
+mafia_ID = ["1212368262"]
 
 """ PPE initialization. """
 

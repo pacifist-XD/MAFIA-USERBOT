@@ -7,26 +7,26 @@ from telethon import functions, types
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import admin_cmd, load_module, remove_plugin, edit_or_reply, sudo_cmd
 from userbot import ALIVE_NAME, CmdHelp
-from userbot import bot as mafia
+from userbot import bot as mafiabot
 
 DELETE_TIMEOUT = 5
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia Userbot"
 mafia_logo = "./H1M4N5HU0P/mafia_userbot_logo.jpg"
 
 
-@mafia.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
-@mafia.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
+@mafiabot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@mafiabot.on(sudo_cmd(pattern=r"send (?P<shortname>\w+)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
-    h1m4n5hu0p = mafia.uid
+    h1m4n5hu0p = mafiabot.uid
     message_id = event.message.id
     thumb = mafia_logo
     input_str = event.pattern_match.group(1)
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         start = datetime.now()
-        guys = await event.client.send_file(
+        botgame = await event.client.send_file(
             event.chat_id,
             the_plugin_file,
             force_document=True,
@@ -36,15 +36,15 @@ async def send(event):
         )
         end = datetime.now()
         time_taken_in_ms = (end - start).seconds
-        await edit_or_reply(guys, f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded in ≈** `{time_taken_in_ms} secs`\n**⍟ Uploaded by ≈** [{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})\n"
+        await edit_or_reply(botgame, f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded in ≈** `{time_taken_in_ms} secs`\n**⍟ Uploaded by ≈** [{DEFAULTUSER}](tg://user?id={h1m4n5hu0p})\n"
         )
         await asyncio.sleep(DELETE_TIMEOUT)
         await event.delete()
     else:
-        await edit_or_reply(event, "File Is Not Found In Mafia Userbot")
+        await edit_or_reply(event, "File Isn't Find In Your Mafia Userbot")
 
-@mafia.on(admin_cmd(pattern=r"install"))
-@mafia.on(sudo_cmd(pattern=r"install", allow_sudo=True))
+@mafiabot.on(admin_cmd(pattern=r"install"))
+@mafiabot.on(sudo_cmd(pattern=r"install", allow_sudo=True))
 async def install(event):
     if event.fwd_from:
         return
@@ -76,8 +76,8 @@ async def install(event):
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
     
-@mafia.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
-@mafia.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
+@mafiabot.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
+@mafiabot.on(sudo_cmd(pattern=r"uninstall (?P<shortname>\w+)", allow_sudo=True))
 async def unload(h1m4n5hu0p):
     if h1m4n5hu0p.fwd_from:
         return
@@ -90,7 +90,7 @@ async def unload(h1m4n5hu0p):
     except OSError as e:
         await h1m4n5hu0p.edit("Error: %s : %s" % (dir_path, e.strerror))
 
-@mafia.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@mafiabot.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
 async def unload(event):
     if event.fwd_from:
         return
@@ -106,7 +106,7 @@ async def unload(event):
         )
 
 
-@mafia.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@mafiabot.on(admin_cmd(pattern=r"load (?P<shortname>\w+)$"))
 async def load(event):
     if event.fwd_from:
         return
@@ -134,4 +134,5 @@ CmdHelp("core").add_command(
 ).add_command(
   "send", "<file name>", "Sends the given file from your userbot server, if any.", "send alive"
 ).add_command(
-  "cmds", None, "Gives out the list of modules in Mafia Userbot.")
+  "cmds", None, "Gives out the list of modules in mafiabot."
+).add()
