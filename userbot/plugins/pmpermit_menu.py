@@ -8,10 +8,10 @@ import asyncio
 
 from telethon import functions
 
-from mafiabot.plugins.sql_helper import pmpermit_sql as pmpermit_sql
-from mafiabot import ALIVE_NAME
+import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+from userbot import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in heroku vars"
 PREV_REPLY_MESSAGE = {}
 
 
