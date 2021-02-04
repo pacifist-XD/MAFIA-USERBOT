@@ -1,41 +1,44 @@
-from sqlalchemy import Column, String
-from mafiabot.plugins.sql_helper import SESSION, BASE
+try:
+    from userbot.plugins.sql_helper import BASE, SESSION
+except ImportError:
+    raise AttributeError
+
+from sqlalchemy import Column, String, UnicodeText
 
 
-class fban(BASE):
-    __tablename__ = "channels"
+class Fban(BASE):
+    __tablename__ = "fban"
     chat_id = Column(String(14), primary_key=True)
+    fed_name = Column(UnicodeText)
 
-    def __init__(self, chat_id):
-        self.chat_id = chat_id
+    def __init__(self, chat_id, fed_name):
+        self.chat_id = str(chat_id)
+        self.fed_name = fed_name
 
 
-fban.__table__.create(checkfirst=True)
+Fban.__table__.create(checkfirst=True)
 
 
-def in_channels(chat_id):
+def get_flist():
     try:
-        return SESSION.query(fban).filter(fban.chat_id == str(chat_id)).one()
-    except BaseException:
-        return None
+        return SESSION.query(Fban).all()
     finally:
         SESSION.close()
 
 
-def add_channel(chat_id):
-    adder = fban(str(chat_id))
+def add_flist(chat_id, fed_name):
+    adder = Fban(str(chat_id), fed_name)
     SESSION.add(adder)
     SESSION.commit()
 
 
-def rm_channel(chat_id):
-    rem = SESSION.query(fban).get(str(chat_id))
+def del_flist(chat_id):
+    rem = SESSION.query(Fban).get(str(chat_id))
     if rem:
         SESSION.delete(rem)
         SESSION.commit()
 
 
-def get_all_channels():
-    rem = SESSION.query(fban).all()
-    SESSION.close()
-    return rem
+def del_flist_all():
+    SESSION.execute("""TRUNCATE TABLE fban""")
+    SESSION.commit()
