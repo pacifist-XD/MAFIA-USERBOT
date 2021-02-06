@@ -43,7 +43,7 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         mafiabot = await borg.send_message(
             event.chat_id,
-            "🔥__My Legend Master__ [{DEFAULTUSER}](tg://user?id={mafia}) __!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+            "🔥__My Legend Master__!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
             + total_afk_time
             + "`", file=mafiapic
         )
