@@ -5,12 +5,12 @@ from userbot import CMD_HELP
 from userbot.utils import *
 
 
-@bot.on(admin_cmd(pattern="mymafia(?: |$)(.*)", outgoing=True))
-@bot.on(sudo_cmd(pattern="mymafia(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="plinfo(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="plinfo(?: |$)(.*)", allow_sudo=True))
 async def mafiabott(event):
     if event.fwd_from:
         return
-    """ .mymafia cmd """
+    """ .plinfo cmd """
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
