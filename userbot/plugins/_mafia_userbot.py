@@ -1,14 +1,15 @@
-# Thanks to my brother @Kraken_The_BadASS
-
-"""Mafia Userbot Help Command"""
+"""MafiaBot Help Command"""
 
 from userbot import *
 from userbot import CMD_HELP
 from userbot.utils import *
 
 
-@bot.on(admin_cmd("mymafia(?: |$)(.*)"))
-async def asena(event):
+@bot.on(admin_cmd(pattern="mymafia(?: |$)(.*)", outgoing=True))
+@bot.on(sudo_cmd(pattern="mymafia(?: |$)(.*)", allow_sudo=True))
+async def mafiabott(event):
+    if event.fwd_from:
+        return
     """ .mymafia cmd """
     args = event.pattern_match.group(1).lower()
     if args:
