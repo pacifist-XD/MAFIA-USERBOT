@@ -95,7 +95,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "@MAFIA_USERBOT",
-                text="""**Hey! This is [Hêllẞø†.](https://t.me/MAFIA_USERBOT) \nYou can know more about me from the links given below 👇**""",
+                text="""**Hey! This is [MAFIA USERBOT](https://t.me/MAFIA_USERBOT) \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
                         custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/MAFIA_USERBOT"),
