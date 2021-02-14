@@ -77,7 +77,7 @@
       "required": false
     },
     "SUDO_USERS": {
-      "description": "Register an account on ocr.space to get this value(API key)....",
+      "description": "Add rose bot and sudo user in group and mention sudo user id and type /id to get sudo users id and paste here ",
       "value": "",
       "required": false
     },
