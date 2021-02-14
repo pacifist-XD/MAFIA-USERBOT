@@ -1,6 +1,6 @@
 {
   "name": "𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋",
-  "description": "The Mafia Userbot made by @H1M4N5HU0P special thanks to respective HellBot owner @Kraken_The_BadASS. Join for updates related info @MAFIA_USERBOT",
+  "description": "The Mafia Userbot made by @H1M4N5HU0P special thanks to respective HellBot owner @Kraken_The_BadASS. Join for updates related info @MAFIABOT_SUPPORT",
   "logo": "https://telegra.ph/file/b61486075c6ef73dd0d12.jpg ",
     "keywords": [
     "telegram",
@@ -9,9 +9,9 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/H1M4N5HU0P/MAFIA-USERBOT/",
-  "website": "https://github.com/H1M4N5HU0P/MAFIA-USERBOT/",
-  "success_url": "https://t.me/MAFIA_USERBOT",
+  "repository": "https://github.com/H1M4N5HU0P/MAFIABOT/",
+  "website": "https://github.com/H1M4N5HU0P/MAFIABOT/",
+  "success_url": "https://t.me/MAFIABOT_SUPPORT",
   "env": {
     "ENV": {
       "description": "Set this to ANYTHING will enable heroku.",
@@ -76,6 +76,11 @@
       "value": "",
       "required": false
     },
+    "SUDO_USERS": {
+      "description": "Register an account on ocr.space to get this value(API key)....",
+      "value": "",
+      "required": false
+    },
     "API_HASH": {
       "description": "Get this value from my.telegram.org! Putting Others Value May result In Account Ban.",
       "value": ""
@@ -97,7 +102,7 @@
        "value": "-1001174481876"
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://repl.it/@H1M4N5HU0P/MAFIA-USERBOT#main.py ",
+      "description": "Get this value by running https://repl.it/@H1M4N5HU0P/MAFIABOT#main.py ",
       "value": ""
     },
     "HEROKU_API_KEY": {
