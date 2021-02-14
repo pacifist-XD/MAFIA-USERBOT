@@ -2,12 +2,12 @@ from telethon.sessions import StringSession
 from telethon.sync import TelegramClient
 
 print("")
-print("""Welcome To MAFIA USERBOT Easiest String Session\nGenerator By @H1M4N5HU0P\n\n""")
+print("""Welcome To MAFIA USERBOT String Session\nGenerator By @H1M4N5HU0P\n\n""")
 print("""Special Thanks To My Buddy Respective HellBot\nOwner @Kraken_The_BadASS\n\n""")
-print("""Enter Your Valid Phone No. With Contry Code To Continue!\n\n """)
+print("""Enter Your Valid Details To Continue!\n\n """)
 
-API_KEY = "2984461"
-API_HASH = "dea3a38bb68055cf364a1ae5a28ed091"
+API_KEY = input("API_ID:  ")
+API_HASH = input("API_HASH:  ")
 
 while True:
     try:
