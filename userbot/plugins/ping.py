@@ -2,13 +2,14 @@ import asyncio
 from datetime import datetime
 
 from .. import ALIVE_NAME, CMD_HELP
-from ..utils import admin_cmd, edit_or_reply
+from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Mafia User"
 kraken = borg.uid
 
 
 @bot.on(admin_cmd(pattern=f"hbping$", outgoing=True))
+@bot.on(sudo_cmd(pattern=f"hbping$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -57,6 +58,7 @@ async def _(event):
 
 
 @bot.on(admin_cmd(pattern="ping$"))
+@bot.on(sudo_cmd(pattern=f"ping$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
