@@ -22,11 +22,11 @@ from var import Var
 
 from userbot import CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
 from userbot.helpers.exceptions import CancelProcess
-from userbot.uniborgConfig import Config
+from userbot.Config import Config
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
-    from userbot.uniborgConfig import Config
+    from userbot.Config import Config
 else:
     if os.path.exists("config.py"):
         from config import Development as Config
@@ -61,6 +61,7 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.Config = Config
         mod.borg = bot
+        mod.mafiabot = bot
         mod.edit_or_reply = edit_or_reply
         mod.delete_mafia = delete_mafia
         # support for mafiabot originals

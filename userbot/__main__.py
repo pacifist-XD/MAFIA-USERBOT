@@ -5,11 +5,13 @@ from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 import os
 from telethon import TelegramClient
 from var import Var
+from userbot.Config import Config
 from userbot.utils import load_module
-from userbot import LOAD_PLUG, BOTLOG_CHATID, LOGS
+from userbot import LOAD_PLUG, LOGS, hellversion
 from pathlib import Path
 import asyncio
 import telethon.utils
+
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -49,7 +51,7 @@ for name in files:
 
 import userbot._core
 
-print("𝕐𝕆𝕌ℝ 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 𝕀𝕊 ℝ𝔼𝔸𝔻𝕐 𝕋𝕆 𝕌𝕊𝔼! 𝔽𝕆ℝ ℂℍ𝔼ℂ𝕂 𝕐𝕆𝕌ℝ 𝔹𝕆𝕋 𝕎𝕆ℝ𝕂𝕀ℕ𝔾 𝕆ℝ ℕ𝕆𝕋 ℙ𝕃𝔼𝔸𝕊𝔼 𝕋𝕐ℙ𝔼 (.alive/.mafia/.ping) 𝔼ℕ𝕁𝕆𝕐 𝕐𝕆𝕌ℝ 𝔹𝕆𝕋! 𝕁𝕆𝕀ℕ 𝔽𝕆ℝ 𝕄𝕆ℝ𝔼 𝔽𝕌𝕋𝕌ℝ𝔼 𝕌ℙ𝔻𝔸𝕋𝔼𝕊 @MAFIA_USERBOT ")
+print(f"""YOUR 𝕄𝔸𝔽𝕀𝔸 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 IS READY TO USE! FOR CHECK YOUR BOT WORKING OR NOT PLEASE TYPE (.alive/.ping) ENJOY YOUR BOT! JOIN FOR MORE FUTURE UPDATES @MAFIA_USERBOT""")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()

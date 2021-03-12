@@ -5,11 +5,11 @@ import time
 from telethon.sessions import StringSession
 from telethon import TelegramClient
 from userbot.helpers import functions as simpdef
-from userbot.uniborgConfig import Config
+from userbot.Config import Config
 from var import Var
 
 StartTime = time.time()
-mafiaversion = "2.0" 
+mafiaversion = "2.0"
 
 os.system("pip install --upgrade pip")
 if Var.STRING_SESSION:
@@ -88,9 +88,8 @@ except:
     # Userbot logging feature switch.
     BOTLOG = sb(os.environ.get("BOTLOG", "False"))
     LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
-    PATTERNS = os.environ.get("PATTERNS", ".;!,")
-    COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
-  
+    COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r".")
+
     # Bleep Blop, this is a bot ;)
     PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
