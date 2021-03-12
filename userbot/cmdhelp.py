@@ -1,3 +1,5 @@
+#ported from HellBot to Mafia Userbot
+
 from userbot import CMD_HELP, CMD_HELP_BOT, PATTERNS, COMMAND_HAND_LER
 
 
